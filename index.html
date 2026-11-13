@@ -8,14 +8,17 @@
   <meta name="theme-color" content="#36442B" />
   <meta property="og:title" content="Laura Berres Friedrich · Formatura em Medicina" />
   <meta property="og:description" content="Você é meu convidado especial. Toque para abrir o convite." />
-  <meta property="og:image" content="og.jpg" />
+  <meta property="og:image" content="https://laura-formatura.vercel.app/og.jpg" />
+  <meta property="og:url" content="https://laura-formatura.vercel.app/" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:type" content="website" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
   <link rel="preload" as="font" type="font/woff2" href="imperial-script-latin-400-normal.woff2" crossorigin />
   <link rel="preload" as="font" type="font/woff2" href="noto-serif-latin-500-normal.woff2" crossorigin />
 
-  <link rel="preload" as="image" href="hortensia.webp" />
+  <link rel="preload" as="image" href="lilas.webp" />
   <link rel="preload" as="image" href="selo.webp" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -43,7 +46,7 @@
     <!-- flores do convite entrando pelas laterais -->
     <div class="intro__flora" aria-hidden="true">
       <img class="ifl ifl--leaf"   src="folha.webp" alt="" />
-      <img class="ifl ifl--hyd-tr" src="hortensia.webp" alt="" />
+      <img class="ifl ifl--lilac" src="lilas.webp" alt="" />
       <img class="ifl ifl--calla-l" src="copo-de-leite.webp" alt="" />
       <img class="ifl ifl--hyd-bl" src="hortensia.webp" alt="" />
       <img class="ifl ifl--lily"   src="lirio.webp" alt="" />
@@ -81,6 +84,7 @@
     <a href="#convite">Convite</a>
     <a href="#fotos">Fotos</a>
     <a href="#presentes" class="dock__gift">Presentes</a>
+    <a href="#dicas">Dicas</a>
   </nav>
 
   <main>
@@ -91,9 +95,8 @@
       <!-- flores (entram pelas laterais e flutuam) -->
       <div class="hero__flora" aria-hidden="true">
         <img class="fl fl--leaf-tr"   src="folha.webp" alt="" />
-        <img class="fl fl--hyd-tr"    src="hortensia.webp" alt="" />
+        <img class="fl fl--lilac"     src="lilas.webp" alt="" />
         <img class="fl fl--calla-l"   src="copo-de-leite.webp" alt="" />
-        <img class="fl fl--hyd-l"     src="hortensia.webp" alt="" />
         <img class="fl fl--leaf-bl"   src="folha.webp" alt="" />
         <img class="fl fl--hyd-bl"    src="hortensia.webp" alt="" />
         <img class="fl fl--lily"      src="lirio.webp" alt="" />
@@ -118,7 +121,7 @@
       <div class="grain"></div>
       <img class="invite__leaf" src="folha.webp" alt="" aria-hidden="true" data-speed="-0.08" />
       <img class="invite__calla" src="copo-de-leite.webp" alt="" aria-hidden="true" data-reveal="from-left" data-speed="0.06" />
-      <img class="invite__hyd" src="hortensia.webp" alt="" aria-hidden="true" data-reveal="from-right" data-speed="-0.05" />
+      <img class="invite__hyd invite__lilac" src="lilas.webp" alt="" aria-hidden="true" data-reveal="from-right" data-speed="-0.05" />
       <img class="invite__lily" src="lirio.webp" alt="" aria-hidden="true" data-reveal="from-left" data-speed="0.04" />
 
       <article class="card" data-reveal="rise">
@@ -198,7 +201,7 @@
           <div class="ph__mat"><div class="ph__inner"><img id="photoMain" alt="" loading="lazy" decoding="async" data-speed="0.06" /></div></div>
         </figure>
 
-        <img class="story__hyd" src="hortensia.webp" alt="" aria-hidden="true" data-reveal="from-right" data-speed="-0.12" />
+        <img class="story__hyd story__lilac" src="lilas.webp" alt="" aria-hidden="true" data-reveal="from-right" data-speed="-0.12" />
         <img class="story__calla" src="copo-de-leite-2.webp" alt="" aria-hidden="true" data-reveal="from-left" data-speed="-0.09" />
 
         <figure class="ph ph--frame" data-reveal="mask-side">
@@ -219,10 +222,33 @@
         <img class="gifts__calla" src="copo-de-leite.webp" alt="" aria-hidden="true" data-reveal="from-right" />
         <header class="gifts__head">
           <h2 class="script" data-reveal="ink">Quer presentear<br/>a nova médica?</h2>
-          <p class="gifts__lead" data-reveal="fade">Escolha um presente simbólico e contribua via Pix — direto para a conta da formanda. Cada gesto será guardado com muito carinho.</p>
+          <p class="gifts__lead" data-reveal="fade">Escolha um presente para dar sozinho ou para dividir com os amigos e compartilhar esse carinho com a formanda. O Pix vai direto para a conta dela.</p>
         </header>
         <ul class="gift-list" id="giftList"></ul>
-        <p class="gifts__note" data-reveal="fade">Os valores são simbólicos e os presentes não são marcados como escolhidos — fique à vontade para repetir.</p>
+      </div>
+    </section>
+
+    <!-- ===================== 5. DICAS: HOSPEDAGEM E BELEZA ===================== -->
+    <section class="tips" id="dicas">
+      <img class="tips__lilac" src="lilas.webp" alt="" aria-hidden="true" data-reveal="from-right" />
+      <header class="tips__head">
+        <p class="caps tiny" data-reveal="fade">para quem vem a Ijuí</p>
+        <h2 class="script" data-reveal="ink">dicas com carinho</h2>
+        <p class="tips__lead" data-reveal="fade">Indicações de hospedagem e de salões de beleza para a noite da formatura. Toque para falar direto pelo WhatsApp.</p>
+      </header>
+      <div class="tips__note" data-reveal="fade">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="1.5"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>
+        <p><strong>Reserve com antecedência:</strong> no dia 11 de dezembro haverá outras festas na cidade, então hotéis e salões podem lotar. São apenas sugestões; fique à vontade para escolher outro lugar.</p>
+      </div>
+      <div class="tips__cols">
+        <div class="tips__col" data-reveal="fade">
+          <h3 class="tips__title"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20V9l9-5 9 5v11"/><path d="M9 20v-6h6v6"/></svg>Onde ficar</h3>
+          <ul class="tip-list" id="tipsHotels"></ul>
+        </div>
+        <div class="tips__col" data-reveal="fade">
+          <h3 class="tips__title"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/><path d="M9 15L19 4M15 15L5 4"/></svg>Onde se arrumar</h3>
+          <ul class="tip-list" id="tipsSalons"></ul>
+        </div>
       </div>
     </section>
 
@@ -249,6 +275,7 @@
       <h3 class="modal__title" id="pixTitle"></h3>
       <p class="modal__value" id="pixValue"></p>
       <p class="modal__hint" id="pixValueHint"></p>
+      <p class="modal__split">Vai dividir com amigos? Cada um pode enviar a sua parte pelo Pix.</p>
 
       <div class="modal__info">
         <div><span class="caps tiny">recebedor</span><strong id="pixReceiver"></strong></div>

@@ -76,21 +76,44 @@ window.SITE_CONFIG = {
      Para adicionar: copie uma linha { ... }, cole abaixo e edite.
      Para remover: apague a linha inteira.
      valor: número em reais, sem "R$" (use ponto para centavos: 89.90)
-     icone: "estetoscopio" | "cafe" | "livro" | "aviao" | "jaleco" | "flor"
-            | "taca" | "coracao" | "relogio" | "maleta" | "plantao" | "estrela" */
+     icone: "estetoscopio" | "cafe" | "livro" | "aviao" | "jaleco" | "flor" | "taca" | "coracao"
+            | "relogio" | "maleta" | "plantao" | "estrela" | "carimbo" | "sushi" | "caneta" | "camisa" | "presente"
+     aPartirDe: true → mostra "a partir de R$ X" e o convidado escolhe o valor
+     livre: true     → valor livre
+     fisico: true    → card sem botão de Pix (presente entregue pessoalmente)              */
   presentes: [
-    { nome: "Café para o primeiro plantão",        descricao: "Para manter a doutora acordada às 3h da manhã.",   valor: 50,   icone: "cafe" },
-    { nome: "Kit sobrevivência de plantão",         descricao: "Lanchinhos, meia de compressão e paciência.",     valor: 120,  icone: "plantao" },
-    { nome: "Jantar de comemoração",               descricao: "Um brinde a todos os anos de estudo.",            valor: 180,  icone: "taca" },
-    { nome: "Jaleco novo com bordado",             descricao: "Agora com “Dra.” antes do nome.",                 valor: 250,  icone: "jaleco" },
-    { nome: "Livros para a residência",            descricao: "Porque o estudo nunca termina.",                  valor: 300,  icone: "livro" },
-    { nome: "Dia de spa pós-provas",               descricao: "Descanso merecido depois da maratona.",           valor: 350,  icone: "flor" },
-    { nome: "Inscrição na prova de residência",    descricao: "O próximo grande passo.",                         valor: 450,  icone: "estrela" },
-    { nome: "Estetoscópio dos sonhos",             descricao: "O companheiro inseparável da nova médica.",       valor: 800,  icone: "estetoscopio" },
-    { nome: "Primeiro congresso médico",           descricao: "Aprender, conhecer gente e voltar inspirada.",    valor: 1000, icone: "maleta" },
-    { nome: "Viagem de formatura",                 descricao: "Uma pausa antes de começar a nova fase.",         valor: 1500, icone: "aviao" },
-    { nome: "Um abraço em forma de Pix",           descricao: "Qualquer carinho é muito bem-vindo.",             valor: 0,    icone: "coracao", livre: true },
+    { nome: "Café especial para os estudos",  descricao: "Para manter a doutora acordada às 3h da manhã.",          valor: 50,   icone: "cafe" },
+    { nome: "Carimbo personalizado",          descricao: "Para as muitas receitas e atestados.",                     valor: 100,  icone: "carimbo" },
+    { nome: "Spa pós-provas",                 descricao: "Uma massagem relaxante.",                                  valor: 150,  icone: "flor" },
+    { nome: "Sushi para a formanda",          descricao: "Um mimo que amo muito.",                                valor: 200,  icone: "sushi" },
+    { nome: "Caneta Swarovski",               descricao: "Para assinar muitas receitas e atestados.",                valor: 300,  icone: "caneta" },
+    { nome: "Look de médica",                 descricao: "Uma camisa chique para atender.",                          valor: 350,  icone: "camisa" },
+    { nome: "Jaleco novo com bordado",        descricao: "Agora com “Dra.” antes do nome.",                          valor: 500,  icone: "jaleco" },
+    { nome: "Congresso médico",               descricao: "Me atualizar e aprender ainda mais sobre dermatologia.", valor: 1000, icone: "maleta" },
+    { nome: "Viagem com a Nathi",             descricao: "Um sonho muito esperado.",                                 valor: 100,  icone: "aviao", aPartirDe: true },
+    { nome: "Um abraço em forma de Pix",      descricao: "Qualquer carinho é muito bem-vindo.",                      valor: 0,    icone: "coracao", livre: true },
+    { nome: "Presentes físicos também são bem-vindos", descricao: "Se preferir, você pode entregar o seu presente no dia da festa.", valor: 0, icone: "presente", fisico: true },
   ],
+
+  /* ---------- DICAS: HOSPEDAGEM E BELEZA ----------
+     whatsapp: só números, com 55 + DDD (ex.: "5555999999999"). Deixe "" se não tiver.
+     mapa: link do Google Maps (pode colar o link de "Compartilhar" do Maps).        */
+  dicas: {
+    mensagemHotel: "Olá! Vou à formatura da Laura em Ijuí (11/12) e gostaria de informações sobre hospedagem.",
+    mensagemSalao: "Olá! Vou a uma formatura em Ijuí no dia 11/12 e gostaria de agendar um horário.",
+    hoteis: [
+      { nome: "Hotel Ijuí",          endereco: "Rua David José Martins, 351 · Centro", whatsapp: "5555984150632", mapa: "https://www.google.com/maps/search/?api=1&query=Hotel+Iju%C3%AD+Rua+David+Jos%C3%A9+Martins+351+Iju%C3%AD" },
+      { nome: "Hotel Vera Cruz",     endereco: "Rua 15 de Novembro, 234 · Centro",     whatsapp: "5555991344812", mapa: "https://www.google.com/maps/search/?api=1&query=Hotel+Vera+Cruz+Iju%C3%AD" },
+      { nome: "Hotel Jardim Europa", endereco: "BR-285, km 457",                       whatsapp: "5555999320343", mapa: "https://www.google.com/maps/search/?api=1&query=Hotel+Jardim+Europa+Iju%C3%AD" },
+      { nome: "Hotel 44",            endereco: "RS-342, km 119 · Distrito Industrial", whatsapp: "5555997010535", mapa: "https://www.google.com/maps/search/?api=1&query=Hotel+44+Iju%C3%AD" },
+    ],
+    saloes: [
+      // ⚠ WhatsApp dos salões não encontrado em fontes oficiais — preencha quando tiver
+      { nome: "Salles Coiffeur",               endereco: "Rua Floriano Peixoto, 529", whatsapp: "", mapa: "https://www.google.com/maps/search/?api=1&query=Salles+Coiffeur+Iju%C3%AD" },
+      { nome: "Glória Beilfuss Beauty House",  endereco: "Centro",                     whatsapp: "", mapa: "https://www.google.com/maps/search/?api=1&query=Gl%C3%B3ria+Beilfuss+Beauty+House+Iju%C3%AD" },
+      { nome: "Madamliê Beauty Center",        endereco: "Ijuí",                       whatsapp: "", mapa: "https://www.google.com/maps/search/?api=1&query=Madamli%C3%AA+Beauty+Center+Iju%C3%AD" },
+    ],
+  },
 
   /* ---------- RODAPÉ ---------- */
   rodape: {

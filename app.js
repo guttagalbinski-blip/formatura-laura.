@@ -66,28 +66,27 @@
   /* ---------- abertura (envelope) ---------- */
   const intro = $("#intro");
   let opened = false;
+  // A abertura do envelope sempre acontece (inclusive no celular),
+  // mesmo com "reduzir movimento" ativado ou com link para uma seção.
+  const goTo = location.hash && $(location.hash) ? location.hash : null;
+  if (goTo) history.replaceState(null, "", location.pathname + location.search);
   function openInvite() {
     if (opened) return;
     opened = true;
     intro.classList.add("is-opening");
-    setTimeout(() => intro.classList.add("is-leaving"), reduceMotion ? 0 : 700);
-    const total = reduceMotion ? 50 : 2900;
+    setTimeout(() => intro.classList.add("is-leaving"), 700);
+    const total = 3400;
     setTimeout(() => {
       intro.classList.add("is-gone");
       document.body.classList.remove("is-locked");
       document.body.classList.add("is-ready");
-      window.scrollTo(0, 0);
+      if (goTo) { $(goTo).scrollIntoView(); history.replaceState(null, "", goTo); }
+      else window.scrollTo(0, 0);
     }, total);
     setTimeout(() => intro.remove(), total + 1200);
   }
   $("#openInvite").addEventListener("click", openInvite);
   $("#openInvite2").addEventListener("click", openInvite);
-  // link direto para uma seção (ex.: .../#presentes) pula a abertura
-  if (location.hash && $(location.hash)) {
-    intro.remove(); opened = true;
-    document.body.classList.remove("is-locked");
-    document.body.classList.add("is-ready");
-  }
 
   /* ---------- contagem regressiva ---------- */
   const target = new Date(C.evento.dataISO).getTime();
@@ -138,6 +137,11 @@
     relogio: '<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>',
     maleta: '<rect x="3.5" y="7" width="17" height="12.5" rx="1.5"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7"/><path d="M12 10.5v5M9.5 13h5"/>',
     plantao: '<path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/><path d="M16 4.5h3l-3 3h3"/>',
+    carimbo: '<path d="M9 4h6v4a2 2 0 0 1-1 1.7V12h-4V9.7A2 2 0 0 1 9 8z"/><path d="M5 12h14v4H5z"/><path d="M7 19h10"/>',
+    sushi: '<ellipse cx="12" cy="9" rx="7" ry="3"/><path d="M5 9v6c0 1.7 3.1 3 7 3s7-1.3 7-3V9"/><ellipse cx="12" cy="9" rx="3" ry="1.2"/>',
+    caneta: '<path d="M15.5 4.5l4 4L9 19l-5 1 1-5z"/><path d="M13.5 6.5l4 4"/><path d="M12 22h8" stroke-dasharray="1 2.5"/>',
+    camisa: '<path d="M8 3l4 3 4-3 4 3-2 4-2-1v12H8V9L6 10 4 6z"/><path d="M12 6v15"/>',
+    presente: '<rect x="3.5" y="9" width="17" height="11" rx="1"/><path d="M12 9v11M3.5 13h17"/><path d="M12 9c-2-4-6-4-6-2s3 2 6 2c3 0 6 0 6-2s-4-2-6 2z"/>',
     estrela: '<path d="M12 3.5l2.4 5.2 5.6.6-4.2 3.8 1.2 5.6L12 15.9 7 18.7l1.2-5.6L4 9.3l5.6-.6z"/>',
   };
   const giftIcon = (k) => `<svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[k] || ICONS.flor}</svg>`;
@@ -145,20 +149,46 @@
   const list = $("#giftList");
   list.innerHTML = C.presentes.map((g, i) => {
     const free = g.livre || !g.valor;
-    return `<li class="gift" style="--d:${(i % 3) * 0.12}s">
+    let price;
+    if (g.aPartirDe) price = `<span class="gift__price"><small class="gift__from">a partir de</small><small>R$</small>${brl(g.valor)}</span>`;
+    else if (free) price = `<span class="gift__price is-free">valor livre</span>`;
+    else price = `<span class="gift__price"><small>R$</small>${brl(g.valor)}</span>`;
+    return `<li class="gift${g.fisico ? " gift--fisico" : ""}" style="--d:${(i % 3) * 0.12}s">
       <span class="gift__icon">${giftIcon(g.icone)}</span>
       <h3 class="gift__name">${esc(g.nome)}</h3>
       ${g.descricao ? `<p class="gift__desc">${esc(g.descricao)}</p>` : ""}
-      <div class="gift__foot">
-        ${free ? `<span class="gift__price is-free">valor livre</span>`
-               : `<span class="gift__price"><small>R$</small>${brl(g.valor)}</span>`}
-        <button class="btn btn--rust" type="button" data-gift="${i}">
+      ${g.fisico ? "" : `<div class="gift__foot">
+        ${price}
+        ${g.fisico ? "" : `<button class="btn btn--rust" type="button" data-gift="${i}">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="9" width="17" height="11" rx="1"/><path d="M12 9v11M3.5 13h17"/><path d="M12 9c-2-4-6-4-6-2s3 2 6 2c3 0 6 0 6-2s-4-2-6 2z"/></svg>
           Presentear
-        </button>
-      </div>
+        </button>`}
+      </div>`}
     </li>`;
   }).join("");
+
+  /* ---------- dicas: hotéis e salões ---------- */
+  const WA = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.6-4.2A8.5 8.5 0 1 1 20.5 11.6z"/><path d="M9 8.6c.3 2.9 2.6 5.3 5.6 5.8l1-1.2-1.6-.9-.8.7c-1-.4-1.9-1.3-2.4-2.4l.7-.8-.9-1.6-1.6.4z" stroke-width="1.1"/></svg>';
+  const PIN = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.2A7 7 0 0 1 19 9.8C19 14.8 12 21 12 21z"/><circle cx="12" cy="10" r="2.5"/></svg>';
+  function renderTips(items, msg) {
+    return (items || []).map((t) => {
+      const wa = (t.whatsapp || "").replace(/\D/g, "");
+      return `<li class="tip">
+        <div class="tip__info"><strong>${esc(t.nome)}</strong>${t.endereco ? `<span>${esc(t.endereco)}</span>` : ""}</div>
+        <div class="tip__actions">
+          ${wa ? `<a class="btn btn--wine tip__wa" href="https://wa.me/${wa}?text=${encodeURIComponent(msg || "")}" target="_blank" rel="noopener">${WA}Entrar em contato</a>` : ""}
+          ${t.mapa ? `<a class="btn btn--ghost tip__map" href="${esc(t.mapa)}" target="_blank" rel="noopener" aria-label="Ver ${esc(t.nome)} no mapa">${PIN}${wa ? "Mapa" : "Ver no mapa"}</a>` : ""}
+        </div>
+      </li>`;
+    }).join("");
+  }
+  if (C.dicas) {
+    $("#tipsHotels").innerHTML = renderTips(C.dicas.hoteis, C.dicas.mensagemHotel);
+    $("#tipsSalons").innerHTML = renderTips(C.dicas.saloes, C.dicas.mensagemSalao);
+  } else {
+    const sec = $("#dicas"); if (sec) sec.remove();
+    const l = $('.dock a[href="#dicas"]'); if (l) l.remove();
+  }
 
   /* ---------- Pix: BR Code (Copia e Cola) ----------
      Padrão EMV/BACEN com valor fixo. Gerado no navegador. */
@@ -198,14 +228,16 @@
 
   function openModal(i) {
     const g = C.presentes[i];
-    const free = g.livre || !g.valor;
+    const min = g.aPartirDe ? g.valor : 0;
+    const free = g.livre || !g.valor || g.aPartirDe;
     $("#pixTitle").textContent = g.nome;
-    $("#pixValue").innerHTML = free ? "valor livre" : `<small>R$</small>${brl(g.valor)}`;
-    $("#pixValue").style.fontSize = free ? "2rem" : "";
-    $("#pixValueHint").textContent = free
-      ? "Você escolhe quanto quer presentear."
+    $("#pixValue").innerHTML = min ? `<small>a partir de R$</small>${brl(min)}` : free ? "valor livre" : `<small>R$</small>${brl(g.valor)}`;
+    $("#pixValue").style.fontSize = free && !min ? "2rem" : "";
+    $("#pixValueHint").textContent = min
+      ? "Você escolhe o valor e digita no app do seu banco."
+      : free ? "Você escolhe quanto quer presentear."
       : "Digite este valor no app do seu banco.";
-    $("#pixStepValue").textContent = free ? "que desejar" : `R$ ${brl(g.valor)}`;
+    $("#pixStepValue").textContent = min ? `que desejar (a partir de R$ ${brl(min)})` : free ? "que desejar" : `R$ ${brl(g.valor)}`;
     $("#pixReceiver").textContent = C.pix.recebedor + (C.pix.banco ? ` · ${C.pix.banco}` : "");
     const k = C.pix.chave.trim();
     $("#pixKey").textContent = /^\d{11}$/.test(k) ? k.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4") + " (CPF)" : k;
