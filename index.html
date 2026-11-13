@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Laura Berres Friedrich · Formatura em Medicina</title>
+  <meta name="description" content="Convite de formatura em Medicina e lista de presentes." />
+  <meta name="theme-color" content="#36442B" />
+  <meta property="og:title" content="Laura Berres Friedrich · Formatura em Medicina" />
+  <meta property="og:description" content="Você é meu convidado especial. Toque para abrir o convite." />
+  <meta property="og:image" content="img/og.jpg" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preload" as="font" type="font/woff2" href="fonts/pinyon-script-latin-400-normal.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="fonts/cormorant-garamond-latin-500-normal.woff2" crossorigin />
+
+  <link rel="preload" as="image" href="img/hortensia.webp" />
+  <link rel="preload" as="image" href="img/selo.webp" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="is-locked">
+
+  <!-- ===================== SVG SPRITES ===================== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- Bastão de Asclépio — símbolo da Medicina -->
+      <symbol id="asclepius" viewBox="0 0 40 120">
+        <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 6 V116"/>
+          <path d="M14 6 H26"/>
+          <path d="M20 104 C8 100 8 90 20 86 C32 82 32 72 20 68 C8 64 8 54 20 50 C32 46 32 36 20 32 C12 29 11 22 16 18 C19 16 24 17 25 20"/>
+          <circle cx="25.5" cy="20.5" r="0.9" fill="currentColor"/>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ===================== ABERTURA: ENVELOPE ===================== -->
+  <div class="intro" id="intro" aria-label="Abertura do convite">
+    <div class="grain"></div>
+
+    <!-- flores do convite entrando pelas laterais -->
+    <div class="intro__flora" aria-hidden="true">
+      <img class="ifl ifl--leaf"   src="img/folha.webp" alt="" />
+      <img class="ifl ifl--hyd-tr" src="img/hortensia.webp" alt="" />
+      <img class="ifl ifl--calla-l" src="img/copo-de-leite.webp" alt="" />
+      <img class="ifl ifl--hyd-bl" src="img/hortensia.webp" alt="" />
+      <img class="ifl ifl--lily"   src="img/lirio.webp" alt="" />
+      <img class="ifl ifl--calla-r" src="img/copo-de-leite-2.webp" alt="" />
+    </div>
+
+    <div class="intro__stage">
+      <p class="caps intro__kicker" data-intro-text>Formatura em <span data-bind="formanda.curso"></span> · <span data-bind="formanda.ano"></span></p>
+
+      <div class="envelope" id="envelope">
+        <div class="envelope__back"></div>
+        <div class="envelope__letter">
+          <span class="script" data-bind="formanda.nome"></span>
+          <span class="caps tiny">convida para a sua formatura</span>
+        </div>
+        <div class="envelope__pocket"></div>
+        <div class="envelope__flap"></div>
+        <button class="envelope__seal" id="openInvite" aria-label="Abrir o convite">
+          <img src="img/selo.webp" alt="" width="400" height="388" />
+        </button>
+      </div>
+
+      <button class="intro__cta" id="openInvite2" type="button" data-intro-text>
+        <svg class="intro__arrow" viewBox="0 0 90 70" aria-hidden="true">
+          <path class="intro__arrow-line" d="M78 64 C 70 40, 52 26, 22 14"/>
+          <path class="intro__arrow-head" d="M34 8 L 20 13 L 30 25"/>
+        </svg>
+        <span class="script intro__cta-text">clique aqui e receba<br/>um convite especial</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ===================== NAVEGAÇÃO ===================== -->
+  <nav class="dock" id="dock" aria-label="Seções">
+    <a href="#convite">Convite</a>
+    <a href="#fotos">Fotos</a>
+    <a href="#presentes" class="dock__gift">Presentes</a>
+  </nav>
+
+  <main>
+    <!-- ===================== 1. HERO ===================== -->
+    <section class="hero" id="inicio">
+      <div class="grain"></div>
+
+      <!-- flores (entram pelas laterais e flutuam) -->
+      <div class="hero__flora" aria-hidden="true">
+        <img class="fl fl--leaf-tr"   src="img/folha.webp" alt="" />
+        <img class="fl fl--hyd-tr"    src="img/hortensia.webp" alt="" />
+        <img class="fl fl--calla-l"   src="img/copo-de-leite.webp" alt="" />
+        <img class="fl fl--hyd-l"     src="img/hortensia.webp" alt="" />
+        <img class="fl fl--leaf-bl"   src="img/folha.webp" alt="" />
+        <img class="fl fl--hyd-bl"    src="img/hortensia.webp" alt="" />
+        <img class="fl fl--lily"      src="img/lirio.webp" alt="" />
+        <img class="fl fl--calla-r"   src="img/copo-de-leite-2.webp" alt="" />
+      </div>
+
+      <div class="hero__content">
+        <p class="caps hero__kicker" data-hero="1">Formatura em <span data-bind="formanda.curso"></span></p>
+        <h1 class="script hero__name" data-hero="2"></h1>
+        <div class="hero__rule" data-hero="3"><span></span><img src="img/flor-bordo.webp" alt="" /><span></span></div>
+        <p class="hero__year" data-hero="4"><span class="caps">Turma</span> <span data-bind="formanda.ano"></span></p>
+      </div>
+
+      <a href="#convite" class="hero__scroll" aria-label="Rolar para o convite" data-hero="5">
+        <span class="caps tiny">abra o convite</span>
+        <i></i>
+      </a>
+    </section>
+
+    <!-- ===================== 2. CONVITE ===================== -->
+    <section class="invite" id="convite">
+      <div class="grain"></div>
+      <img class="invite__leaf" src="img/folha.webp" alt="" aria-hidden="true" data-speed="-0.08" />
+      <img class="invite__calla" src="img/copo-de-leite.webp" alt="" aria-hidden="true" data-reveal="from-left" data-speed="0.06" />
+      <img class="invite__hyd" src="img/hortensia.webp" alt="" aria-hidden="true" data-reveal="from-right" data-speed="-0.05" />
+      <img class="invite__lily" src="img/lirio.webp" alt="" aria-hidden="true" data-reveal="from-left" data-speed="0.04" />
+
+      <article class="card" data-reveal="rise">
+        <!-- moldura desenhada em tempo real (app.js) para manter as proporções em qualquer tela -->
+        <svg class="card__frame" id="cardFrame" aria-hidden="true">
+          <path class="frame-outer"/><path class="frame-inner"/>
+        </svg>
+
+        <div class="card__body">
+          <h2 class="script card__name" data-reveal="ink"></h2>
+          <p class="caps card__call" data-reveal="fade" data-bind="convite.chamada"></p>
+
+          <div class="card__date" data-reveal="fade">
+            <span data-bind="evento.dataExtenso"></span>
+            <i></i>
+            <span data-bind="evento.horario"></span>
+          </div>
+          <p class="card__weekday" data-reveal="fade" data-bind="evento.diaSemana"></p>
+
+          <div class="card__place" data-reveal="fade">
+            <strong class="caps" data-bind="evento.local"></strong>
+            <span data-bind="evento.endereco"></span>
+            <span data-bind="evento.cidade"></span>
+          </div>
+
+          <img class="card__orn" src="img/flor-bordo.webp" alt="" aria-hidden="true" data-reveal="bloom" />
+
+          <div class="card__course" data-reveal="ink">
+            <svg class="asclepius" aria-label="Bastão de Asclépio, símbolo da Medicina" role="img"><use href="#asclepius"/></svg>
+            <span class="script" data-bind="formanda.curso"></span>
+          </div>
+
+          <div class="card__text" id="inviteText" data-reveal="fade"></div>
+
+          <div class="card__actions" data-reveal="fade">
+            <a class="btn btn--wine" id="mapsBtn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.2A7 7 0 0 1 19 9.8C19 14.8 12 21 12 21z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              Ver no Google Maps
+            </a>
+            <button class="btn btn--ghost" id="icsBtn" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="1.5"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>
+              Salvar na agenda
+            </button>
+          </div>
+
+          <a class="rsvp" id="rsvpLink" target="_blank" rel="noopener" data-reveal="fade">
+            <span class="caps">rsvp</span>
+            <span class="rsvp__phone" data-bind="convite.rsvp.telefone"></span>
+            <span class="rsvp__when" data-bind="convite.rsvp.prazo"></span>
+            <span class="rsvp__cta">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.6-4.2A8.5 8.5 0 1 1 20.5 11.6z"/><path d="M9 8.6c.3 2.9 2.6 5.3 5.6 5.8l1-1.2-1.6-.9-.8.7c-1-.4-1.9-1.3-2.4-2.4l.7-.8-.9-1.6-1.6.4z" stroke-width="1.1"/></svg>
+              confirmar pelo WhatsApp
+            </span>
+          </a>
+        </div>
+      </article>
+
+      <div class="countdown" id="countdown" data-reveal="fade" aria-live="polite">
+        <div><b data-cd="d">--</b><span>dias</span></div>
+        <div><b data-cd="h">--</b><span>horas</span></div>
+        <div><b data-cd="m">--</b><span>min</span></div>
+        <div><b data-cd="s">--</b><span>seg</span></div>
+      </div>
+    </section>
+
+    <!-- ===================== 3. FOTOGRAFIAS ===================== -->
+    <section class="story" id="fotos">
+      <div class="story__stripes" data-speed="-0.04" aria-hidden="true"></div>
+
+      <header class="story__head">
+        <p class="caps tiny" data-reveal="fade">capítulo final</p>
+        <h2 class="script" data-reveal="ink">a nova médica</h2>
+      </header>
+
+      <div class="story__grid">
+        <figure class="ph ph--arch" data-reveal="mask">
+          <div class="ph__mat"><div class="ph__inner"><img id="photoMain" alt="" loading="lazy" decoding="async" data-speed="0.06" /></div></div>
+        </figure>
+
+        <img class="story__hyd" src="img/hortensia.webp" alt="" aria-hidden="true" data-reveal="from-right" data-speed="-0.12" />
+        <img class="story__calla" src="img/copo-de-leite-2.webp" alt="" aria-hidden="true" data-reveal="from-left" data-speed="-0.09" />
+
+        <figure class="ph ph--frame" data-reveal="mask-side">
+          <div class="ph__mat"><div class="ph__inner"><img id="photoSecond" alt="" loading="lazy" decoding="async" /></div></div>
+        </figure>
+
+        <blockquote class="story__quote" data-reveal="fade">
+          <svg class="asclepius asclepius--sm" aria-hidden="true"><use href="#asclepius"/></svg>
+          <p id="photoCaption"></p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ===================== 4. PRESENTES ===================== -->
+    <section class="gifts" id="presentes">
+      <div class="gifts__panel">
+        <div class="grain"></div>
+        <img class="gifts__calla" src="img/copo-de-leite.webp" alt="" aria-hidden="true" data-reveal="from-right" />
+        <header class="gifts__head">
+          <h2 class="script" data-reveal="ink">Quer presentear<br/>a nova médica?</h2>
+          <p class="gifts__lead" data-reveal="fade">Escolha um presente simbólico e contribua via Pix — direto para a conta da formanda. Cada gesto será guardado com muito carinho.</p>
+        </header>
+        <ul class="gift-list" id="giftList"></ul>
+        <p class="gifts__note" data-reveal="fade">Os valores são simbólicos e os presentes não são marcados como escolhidos — fique à vontade para repetir.</p>
+      </div>
+    </section>
+
+    <!-- ===================== RODAPÉ ===================== -->
+    <footer class="footer">
+      <div class="grain"></div>
+      <img class="footer__seal" src="img/selo.webp" alt="" aria-hidden="true" data-reveal="bloom" />
+      <p class="script footer__sign" data-bind="convite.assinatura" data-reveal="ink"></p>
+      <p class="footer__line" data-bind="rodape.frase" data-reveal="fade"></p>
+      <p class="caps tiny footer__meta"><span data-bind="formanda.curso"></span> · <span data-bind="formanda.ano"></span></p>
+    </footer>
+  </main>
+
+  <!-- ===================== MODAL PIX ===================== -->
+  <div class="modal" id="pixModal" role="dialog" aria-modal="true" aria-labelledby="pixTitle" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__sheet" role="document">
+      <button class="modal__close" type="button" aria-label="Fechar" data-close>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <span class="modal__grip" aria-hidden="true"></span>
+      <img class="modal__orn" src="img/flor-bordo.webp" alt="" aria-hidden="true" />
+      <p class="caps tiny modal__kicker">você escolheu</p>
+      <h3 class="modal__title" id="pixTitle"></h3>
+      <p class="modal__value" id="pixValue"></p>
+      <p class="modal__hint" id="pixValueHint"></p>
+
+      <div class="modal__info">
+        <div><span class="caps tiny">recebedor</span><strong id="pixReceiver"></strong></div>
+        <div><span class="caps tiny">chave pix</span><strong id="pixKey" class="mono"></strong></div>
+      </div>
+      <p class="modal__warn" id="pixWarn" hidden>⚠ Chave Pix provisória — configure em <code>config.js</code>.</p>
+
+      <button class="btn btn--wine btn--block" id="copyKeyBtn" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="1.5"/><path d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4h-9A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16H8"/></svg>
+        <span>Copiar chave Pix</span>
+      </button>
+
+      <ol class="modal__steps">
+        <li>Abra o app do seu banco e escolha <b>Pix › Pagar com chave</b>.</li>
+        <li>Cole a chave e digite o valor <b id="pixStepValue"></b>.</li>
+        <li>Confira o nome do recebedor e confirme.</li>
+      </ol>
+
+      <details class="bc" id="brcodeBox">
+        <summary>
+          <span><b>Alternativa:</b> Pix Copia e Cola <em id="bcSub">com o valor já preenchido</em></span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="bc__body">
+          <p>No app do banco, escolha <b>Pix › Copia e Cola</b> e cole o código abaixo.</p>
+          <textarea id="brcode" readonly rows="3" aria-label="Código Pix Copia e Cola"></textarea>
+          <button class="btn btn--ghost btn--block" id="copyCodeBtn" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="1.5"/><path d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4h-9A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16H8"/></svg>
+            <span>Copiar código Pix</span>
+          </button>
+        </div>
+      </details>
+
+      <p class="modal__thanks script">obrigada!</p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
