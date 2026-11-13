@@ -8,15 +8,15 @@
   <meta name="theme-color" content="#36442B" />
   <meta property="og:title" content="Laura Berres Friedrich · Formatura em Medicina" />
   <meta property="og:description" content="Você é meu convidado especial. Toque para abrir o convite." />
-  <meta property="og:image" content="img/og.jpg" />
+  <meta property="og:image" content="og.jpg" />
   <meta property="og:type" content="website" />
-  <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
-  <link rel="preload" as="font" type="font/woff2" href="fonts/pinyon-script-latin-400-normal.woff2" crossorigin />
-  <link rel="preload" as="font" type="font/woff2" href="fonts/cormorant-garamond-latin-500-normal.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="imperial-script-latin-400-normal.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="noto-serif-latin-500-normal.woff2" crossorigin />
 
-  <link rel="preload" as="image" href="img/hortensia.webp" />
-  <link rel="preload" as="image" href="img/selo.webp" />
+  <link rel="preload" as="image" href="hortensia.webp" />
+  <link rel="preload" as="image" href="selo.webp" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="is-locked">
@@ -42,12 +42,12 @@
 
     <!-- flores do convite entrando pelas laterais -->
     <div class="intro__flora" aria-hidden="true">
-      <img class="ifl ifl--leaf"   src="img/folha.webp" alt="" />
-      <img class="ifl ifl--hyd-tr" src="img/hortensia.webp" alt="" />
-      <img class="ifl ifl--calla-l" src="img/copo-de-leite.webp" alt="" />
-      <img class="ifl ifl--hyd-bl" src="img/hortensia.webp" alt="" />
-      <img class="ifl ifl--lily"   src="img/lirio.webp" alt="" />
-      <img class="ifl ifl--calla-r" src="img/copo-de-leite-2.webp" alt="" />
+      <img class="ifl ifl--leaf"   src="folha.webp" alt="" />
+      <img class="ifl ifl--hyd-tr" src="hortensia.webp" alt="" />
+      <img class="ifl ifl--calla-l" src="copo-de-leite.webp" alt="" />
+      <img class="ifl ifl--hyd-bl" src="hortensia.webp" alt="" />
+      <img class="ifl ifl--lily"   src="lirio.webp" alt="" />
+      <img class="ifl ifl--calla-r" src="copo-de-leite-2.webp" alt="" />
     </div>
 
     <div class="intro__stage">
@@ -62,7 +62,7 @@
         <div class="envelope__pocket"></div>
         <div class="envelope__flap"></div>
         <button class="envelope__seal" id="openInvite" aria-label="Abrir o convite">
-          <img src="img/selo.webp" alt="" width="400" height="388" />
+          <img src="selo.webp" alt="" width="400" height="388" />
         </button>
       </div>
 
@@ -90,20 +90,20 @@
 
       <!-- flores (entram pelas laterais e flutuam) -->
       <div class="hero__flora" aria-hidden="true">
-        <img class="fl fl--leaf-tr"   src="img/folha.webp" alt="" />
-        <img class="fl fl--hyd-tr"    src="img/hortensia.webp" alt="" />
-        <img class="fl fl--calla-l"   src="img/copo-de-leite.webp" alt="" />
-        <img class="fl fl--hyd-l"     src="img/hortensia.webp" alt="" />
-        <img class="fl fl--leaf-bl"   src="img/folha.webp" alt="" />
-        <img class="fl fl--hyd-bl"    src="img/hortensia.webp" alt="" />
-        <img class="fl fl--lily"      src="img/lirio.webp" alt="" />
-        <img class="fl fl--calla-r"   src="img/copo-de-leite-2.webp" alt="" />
+        <img class="fl fl--leaf-tr"   src="folha.webp" alt="" />
+        <img class="fl fl--hyd-tr"    src="hortensia.webp" alt="" />
+        <img class="fl fl--calla-l"   src="copo-de-leite.webp" alt="" />
+        <img class="fl fl--hyd-l"     src="hortensia.webp" alt="" />
+        <img class="fl fl--leaf-bl"   src="folha.webp" alt="" />
+        <img class="fl fl--hyd-bl"    src="hortensia.webp" alt="" />
+        <img class="fl fl--lily"      src="lirio.webp" alt="" />
+        <img class="fl fl--calla-r"   src="copo-de-leite-2.webp" alt="" />
       </div>
 
       <div class="hero__content">
         <p class="caps hero__kicker" data-hero="1">Formatura em <span data-bind="formanda.curso"></span></p>
         <h1 class="script hero__name" data-hero="2"></h1>
-        <div class="hero__rule" data-hero="3"><span></span><img src="img/flor-bordo.webp" alt="" /><span></span></div>
+        <div class="hero__rule" data-hero="3"><span></span><img src="flor-bordo.webp" alt="" /><span></span></div>
         <p class="hero__year" data-hero="4"><span class="caps">Turma</span> <span data-bind="formanda.ano"></span></p>
       </div>
 
@@ -116,10 +116,10 @@
     <!-- ===================== 2. CONVITE ===================== -->
     <section class="invite" id="convite">
       <div class="grain"></div>
-      <img class="invite__leaf" src="img/folha.webp" alt="" aria-hidden="true" data-speed="-0.08" />
-      <img class="invite__calla" src="img/copo-de-leite.webp" alt="" aria-hidden="true" data-reveal="from-left" data-speed="0.06" />
-      <img class="invite__hyd" src="img/hortensia.webp" alt="" aria-hidden="true" data-reveal="from-right" data-speed="-0.05" />
-      <img class="invite__lily" src="img/lirio.webp" alt="" aria-hidden="true" data-reveal="from-left" data-speed="0.04" />
+      <img class="invite__leaf" src="folha.webp" alt="" aria-hidden="true" data-speed="-0.08" />
+      <img class="invite__calla" src="copo-de-leite.webp" alt="" aria-hidden="true" data-reveal="from-left" data-speed="0.06" />
+      <img class="invite__hyd" src="hortensia.webp" alt="" aria-hidden="true" data-reveal="from-right" data-speed="-0.05" />
+      <img class="invite__lily" src="lirio.webp" alt="" aria-hidden="true" data-reveal="from-left" data-speed="0.04" />
 
       <article class="card" data-reveal="rise">
         <!-- moldura desenhada em tempo real (app.js) para manter as proporções em qualquer tela -->
@@ -144,7 +144,7 @@
             <span data-bind="evento.cidade"></span>
           </div>
 
-          <img class="card__orn" src="img/flor-bordo.webp" alt="" aria-hidden="true" data-reveal="bloom" />
+          <img class="card__orn" src="flor-bordo.webp" alt="" aria-hidden="true" data-reveal="bloom" />
 
           <div class="card__course" data-reveal="ink">
             <svg class="asclepius" aria-label="Bastão de Asclépio, símbolo da Medicina" role="img"><use href="#asclepius"/></svg>
@@ -198,8 +198,8 @@
           <div class="ph__mat"><div class="ph__inner"><img id="photoMain" alt="" loading="lazy" decoding="async" data-speed="0.06" /></div></div>
         </figure>
 
-        <img class="story__hyd" src="img/hortensia.webp" alt="" aria-hidden="true" data-reveal="from-right" data-speed="-0.12" />
-        <img class="story__calla" src="img/copo-de-leite-2.webp" alt="" aria-hidden="true" data-reveal="from-left" data-speed="-0.09" />
+        <img class="story__hyd" src="hortensia.webp" alt="" aria-hidden="true" data-reveal="from-right" data-speed="-0.12" />
+        <img class="story__calla" src="copo-de-leite-2.webp" alt="" aria-hidden="true" data-reveal="from-left" data-speed="-0.09" />
 
         <figure class="ph ph--frame" data-reveal="mask-side">
           <div class="ph__mat"><div class="ph__inner"><img id="photoSecond" alt="" loading="lazy" decoding="async" /></div></div>
@@ -216,7 +216,7 @@
     <section class="gifts" id="presentes">
       <div class="gifts__panel">
         <div class="grain"></div>
-        <img class="gifts__calla" src="img/copo-de-leite.webp" alt="" aria-hidden="true" data-reveal="from-right" />
+        <img class="gifts__calla" src="copo-de-leite.webp" alt="" aria-hidden="true" data-reveal="from-right" />
         <header class="gifts__head">
           <h2 class="script" data-reveal="ink">Quer presentear<br/>a nova médica?</h2>
           <p class="gifts__lead" data-reveal="fade">Escolha um presente simbólico e contribua via Pix — direto para a conta da formanda. Cada gesto será guardado com muito carinho.</p>
@@ -229,7 +229,7 @@
     <!-- ===================== RODAPÉ ===================== -->
     <footer class="footer">
       <div class="grain"></div>
-      <img class="footer__seal" src="img/selo.webp" alt="" aria-hidden="true" data-reveal="bloom" />
+      <img class="footer__seal" src="selo.webp" alt="" aria-hidden="true" data-reveal="bloom" />
       <p class="script footer__sign" data-bind="convite.assinatura" data-reveal="ink"></p>
       <p class="footer__line" data-bind="rodape.frase" data-reveal="fade"></p>
       <p class="caps tiny footer__meta"><span data-bind="formanda.curso"></span> · <span data-bind="formanda.ano"></span></p>
@@ -244,7 +244,7 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
       <span class="modal__grip" aria-hidden="true"></span>
-      <img class="modal__orn" src="img/flor-bordo.webp" alt="" aria-hidden="true" />
+      <img class="modal__orn" src="flor-bordo.webp" alt="" aria-hidden="true" />
       <p class="caps tiny modal__kicker">você escolheu</p>
       <h3 class="modal__title" id="pixTitle"></h3>
       <p class="modal__value" id="pixValue"></p>

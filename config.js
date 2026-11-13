@@ -54,8 +54,8 @@ window.SITE_CONFIG = {
      "foco" define qual parte da foto fica visível quando ela é recortada
      (ex.: "50% 20%" = centro na horizontal, mais para o topo).          */
   fotos: {
-    principal:  { src: "img/laura-jaleco.jpg", alt: "Laura de jaleco, sorrindo",            foco: "50% 30%" },
-    secundaria: { src: "img/laura-beca.jpg",   alt: "Laura de beca segurando o canudo",     foco: "50% 25%" },
+    principal:  { src: "laura-jaleco.jpg", alt: "Laura de jaleco, sorrindo",            foco: "50% 30%" },
+    secundaria: { src: "laura-beca.jpg",   alt: "Laura de beca segurando o canudo",     foco: "50% 25%" },
     legenda: "O jaleco, o juramento e um sonho que agora tem nome: doutora.",
   },
 
