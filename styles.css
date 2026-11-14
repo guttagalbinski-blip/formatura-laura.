@@ -696,3 +696,122 @@ button{ font:inherit; color:inherit; }
 .gift--fisico .gift__foot{ border-top-color:rgba(243,235,221,.2); }
 .gift__price small{ white-space:nowrap; }
 .gift__from{ display:block; margin:0 0 2px !important; letter-spacing:.16em; }
+
+/* =========================================================
+   COMPOSIÇÕES FLORAIS (buquês) — tons do vestido
+   ========================================================= */
+.bq{ position:absolute; aspect-ratio:1; pointer-events:none; --r:0deg; }
+.bq > img{
+  position:absolute; left:var(--x); top:var(--y); width:var(--w); height:auto; max-width:none;
+  transform:rotate(var(--r)); transform-origin:50% 60%;
+  animation:sway var(--d, 10s) ease-in-out infinite;
+  filter:drop-shadow(0 6px 10px rgba(20,25,15,.18));
+}
+/* abertura */
+.ifl--tr{ width:clamp(220px, 64vw, 540px); right:-20%; top:-12%; --from:translate(40%,-30%); }
+.ifl--sm{ width:clamp(110px, 30vw, 230px); left:-9%;  top:13%;  --from:translate(-70%,0); }
+.ifl--bl{ width:clamp(220px, 62vw, 520px); left:-18%; bottom:-16%; --from:translate(-40%,40%); }
+.ifl--tr{ animation-delay:.1s, 2.5s; } .ifl--sm{ animation-delay:.6s, 3s; } .ifl--bl{ animation-delay:.3s, 2.7s; }
+/* topo */
+.fl--tr{ width:clamp(220px, 62vw, 560px); right:-20%; top:-12%; --r:0deg; --from:translate(40%,-30%); }
+.fl--sm{ width:clamp(100px, 28vw, 220px); right:-4%;  bottom:4%;  --r:0deg; --from:translate(70%,20%); }
+.fl--bl{ width:clamp(220px, 60vw, 520px); left:-18%; bottom:-16%; --r:0deg; --from:translate(-40%,40%); }
+.is-ready .fl--tr{ animation-delay:.05s, 2.2s; } .is-ready .fl--sm{ animation-delay:.5s, 2.7s; } .is-ready .fl--bl{ animation-delay:.25s, 2.4s; }
+/* convite */
+.cl-inv-l{ left:-9%; top:40px; width:clamp(100px, 28vw, 220px); z-index:2; }
+.cl-inv-r{ right:-24%; top:42%; width:clamp(170px, 48vw, 380px); z-index:0; }
+.cl-inv-b{ left:-26%; bottom:10%; width:clamp(170px, 48vw, 380px); z-index:2; }
+/* fotos */
+.cl-story{ right:-20%; top:-1%; width:clamp(170px, 46vw, 360px); z-index:3; }
+.cl-story2{ left:-5%; top:46%; width:clamp(100px, 28vw, 210px); z-index:3; }
+/* presentes e dicas */
+.cl-gift{ right:-34px; top:26px; width:clamp(110px, 30vw, 220px); z-index:0; }
+.cl-tips{ right:-8%; top:-24px; width:clamp(110px, 30vw, 220px); z-index:0; }
+
+@media (min-width: 980px){
+  .ifl--sm{ left:8%; top:14%; }
+  .fl--sm{ right:8%; bottom:6%; }
+  .cl-inv-l{ left:calc(50% - 420px); top:110px; }
+  .cl-inv-r{ right:calc(50% - 500px); top:30%; z-index:2; }
+  .cl-inv-b{ left:calc(50% - 520px); bottom:16%; }
+  .cl-story2{ left:44%; top:auto; bottom:-6%; }
+  .cl-tips{ right:4%; }
+}
+@media (prefers-reduced-motion: reduce){ .bq > img{ animation:none; } }
+
+/* ---- ajuste: flores sempre nos cantos, nunca atrás de textos ---- */
+.ifl--tr, .fl--tr{ width:clamp(180px, min(58vw, 40vh), 520px); right:-14%; top:-10%; }
+.ifl--bl, .fl--bl{ width:clamp(180px, min(58vw, 40vh), 500px); left:-14%; bottom:-12%; }
+.ifl--sm{ width:clamp(90px, min(26vw, 18vh), 210px); left:auto; right:-5%; top:auto; bottom:3%; --from:translate(70%,20%); }
+.fl--sm{ width:clamp(90px, min(26vw, 18vh), 210px); right:-4%; bottom:3%; }
+.hero{ padding-top:clamp(140px, 24vh, 230px); padding-bottom:clamp(140px, 22vh, 220px); }
+.cl-card-tl{ left:-34px; top:-30px; width:clamp(110px, 30vw, 170px); z-index:2; }
+.cl-card-br{ right:-34px; bottom:-38px; width:clamp(120px, 32vw, 185px); z-index:2; }
+.cl-story{ left:-6%; right:auto; top:-24px; width:clamp(100px, 26vw, 180px); z-index:3; }
+.cl-gift{ right:-24px; top:-18px; width:clamp(100px, 26vw, 180px); z-index:0; }
+.gifts__panel{ padding-top:clamp(120px, 16vw, 150px); }
+.cl-tips{ right:-6%; top:-30px; width:clamp(100px, 26vw, 180px); z-index:0; }
+.tips{ padding-top:clamp(130px, 15vw, 160px); }
+.story{ padding-top:clamp(120px, 15vw, 160px); }
+@media (min-width: 980px){
+  .ifl--sm{ left:auto; right:6%; top:auto; bottom:5%; }
+  .cl-card-tl{ left:-70px; top:-50px; width:200px; }
+  .cl-card-br{ right:-70px; bottom:-60px; width:220px; }
+  .cl-story{ left:2%; }
+  .cl-tips{ right:4%; }
+}
+/* abertura: buquê de baixo menor para não encostar no "clique aqui" */
+.ifl--bl{ width:clamp(150px, min(48vw, 30vh), 440px); bottom:-16%; }
+.ifl--sm{ width:clamp(80px, min(24vw, 15vh), 200px); }
+/* telas largas: buquês maiores nas laterais, longe dos textos centrais */
+@media (min-width: 900px) and (min-aspect-ratio: 1/1){
+  .ifl--tr, .fl--tr{ width:clamp(260px, 28vw, 520px); right:-4%; top:-8%; }
+  .ifl--bl, .fl--bl{ width:clamp(240px, 26vw, 480px); left:-4%; bottom:-10%; }
+  .ifl--sm, .fl--sm{ width:clamp(130px, 13vw, 240px); right:5%; bottom:4%; }
+}
+
+/* ---- buquês imponentes (texto continua livre: o espaço é reservado pelo padding) ---- */
+.ifl--tr{ width:clamp(230px, min(72vw, 44vh), 600px); right:-16%; top:-11%; }
+.ifl--bl{ width:clamp(220px, min(70vw, 40vh), 580px); left:-16%; bottom:-14%; }
+.ifl--sm{ width:clamp(110px, min(34vw, 22vh), 260px); right:-6%; bottom:2%; }
+.fl--tr{ width:clamp(250px, 76vw, 640px); right:-16%; top:-60px; }
+.fl--bl{ width:clamp(240px, 74vw, 620px); left:-16%; bottom:-70px; }
+.fl--sm{ width:clamp(120px, 36vw, 280px); right:-6%; bottom:2%; }
+.hero{ padding-top:calc(clamp(250px, 76vw, 640px) - 70px); padding-bottom:calc(clamp(240px, 74vw, 620px) - 80px); }
+.cl-card-tl{ left:-56px; top:-58px; width:clamp(170px, 46vw, 300px); }
+.cl-card-br{ right:-56px; bottom:-64px; width:clamp(180px, 50vw, 320px); }
+.card{ padding-top:clamp(110px, 26vw, 150px); padding-bottom:clamp(120px, 30vw, 170px); }
+.invite{ padding-top:clamp(120px, 18vw, 170px); padding-bottom:clamp(110px, 16vw, 150px); }
+.cl-story{ width:clamp(160px, 44vw, 300px); left:-8%; top:-34px; }
+.story{ padding-top:clamp(170px, 42vw, 280px); }
+.cl-story2{ width:clamp(150px, 40vw, 280px); }
+.cl-gift{ width:clamp(160px, 44vw, 300px); right:-40px; top:-30px; }
+.gifts__panel{ padding-top:clamp(170px, 42vw, 270px); }
+.cl-tips{ width:clamp(160px, 44vw, 300px); right:-8%; top:-40px; }
+.tips{ padding-top:clamp(170px, 42vw, 270px); }
+@media (min-width: 900px) and (min-aspect-ratio: 1/1){
+  .ifl--tr{ width:clamp(320px, 34vw, 640px); right:-5%; top:-10%; }
+  .ifl--bl{ width:clamp(300px, 32vw, 600px); left:-5%; bottom:-12%; }
+  .ifl--sm{ width:clamp(170px, 17vw, 300px); right:4%; bottom:2%; }
+  .fl--tr{ width:clamp(340px, 36vw, 680px); right:-5%; top:-8%; }
+  .fl--bl{ width:clamp(320px, 34vw, 640px); left:-5%; bottom:-10%; }
+  .fl--sm{ width:clamp(170px, 17vw, 300px); right:4%; bottom:3%; }
+  .hero{ padding-top:120px; padding-bottom:140px; }
+  .cl-card-tl{ left:-120px; top:-90px; width:300px; }
+  .cl-card-br{ right:-130px; bottom:-100px; width:320px; }
+  .story, .tips{ padding-top:180px; }
+  .gifts__panel{ padding-top:170px; }
+  .cl-story{ left:4%; }
+}
+/* abertura no celular: buquês grandes, mas sem encostar no texto */
+@media (max-width: 899px), (max-aspect-ratio: 1/1){
+  .ifl--tr{ width:clamp(220px, min(66vw, 37vh), 520px); right:-14%; top:-18%; }
+  .ifl--bl{ width:clamp(220px, min(70vw, 42vh), 540px); left:-20%; bottom:-22%; }
+}
+@media (max-width: 899px), (max-aspect-ratio: 1/1){
+  .intro__kicker{ display:none; }
+  .ifl--tr{ top:-9%; }
+}
+.tips__note--dress{ align-items:center; margin-bottom:12px; }
+.tips__note--dress p{ font-size:.95rem; }
+.tips__note--dress + .tips__note{ margin-top:0; }

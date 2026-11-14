@@ -82,7 +82,7 @@ window.SITE_CONFIG = {
      livre: true     → valor livre
      fisico: true    → card sem botão de Pix (presente entregue pessoalmente)              */
   presentes: [
-    { nome: "Café especial para os estudos",  descricao: "Para manter a doutora acordada às 3h da manhã.",          valor: 50,   icone: "cafe" },
+    { nome: "Café especial para os estudos",  descricao: "Para manter a doutora acordada às 3h da manhã.",          valor: 100,  icone: "cafe" },
     { nome: "Carimbo personalizado",          descricao: "Para as muitas receitas e atestados.",                     valor: 100,  icone: "carimbo" },
     { nome: "Spa pós-provas",                 descricao: "Uma massagem relaxante.",                                  valor: 150,  icone: "flor" },
     { nome: "Sushi para a formanda",          descricao: "Um mimo que amo muito.",                                valor: 200,  icone: "sushi" },
@@ -91,7 +91,7 @@ window.SITE_CONFIG = {
     { nome: "Jaleco novo com bordado",        descricao: "Agora com “Dra.” antes do nome.",                          valor: 500,  icone: "jaleco" },
     { nome: "Congresso médico",               descricao: "Me atualizar e aprender ainda mais sobre dermatologia.", valor: 1000, icone: "maleta" },
     { nome: "Viagem com a Nathi",             descricao: "Um sonho muito esperado.",                                 valor: 100,  icone: "aviao", aPartirDe: true },
-    { nome: "Um abraço em forma de Pix",      descricao: "Qualquer carinho é muito bem-vindo.",                      valor: 0,    icone: "coracao", livre: true },
+    { nome: "Um abraço em forma de Pix",      descricao: "Qualquer carinho é muito bem-vindo.",                      valor: 100,  icone: "coracao", aPartirDe: true },
     { nome: "Presentes físicos também são bem-vindos", descricao: "Se preferir, você pode entregar o seu presente no dia da festa.", valor: 0, icone: "presente", fisico: true },
   ],
 
@@ -108,10 +108,13 @@ window.SITE_CONFIG = {
       { nome: "Hotel 44",            endereco: "RS-342, km 119 · Distrito Industrial", whatsapp: "5555997010535", mapa: "https://www.google.com/maps/search/?api=1&query=Hotel+44+Iju%C3%AD" },
     ],
     saloes: [
-      // ⚠ WhatsApp dos salões não encontrado em fontes oficiais — preencha quando tiver
-      { nome: "Salles Coiffeur",               endereco: "Rua Floriano Peixoto, 529", whatsapp: "", mapa: "https://www.google.com/maps/search/?api=1&query=Salles+Coiffeur+Iju%C3%AD" },
-      { nome: "Glória Beilfuss Beauty House",  endereco: "Centro",                     whatsapp: "", mapa: "https://www.google.com/maps/search/?api=1&query=Gl%C3%B3ria+Beilfuss+Beauty+House+Iju%C3%AD" },
-      { nome: "Madamliê Beauty Center",        endereco: "Ijuí",                       whatsapp: "", mapa: "https://www.google.com/maps/search/?api=1&query=Madamli%C3%AA+Beauty+Center+Iju%C3%AD" },
+      // WhatsApp confirmado só do Bellame. Para os outros, o botão leva ao perfil oficial do salão.
+      // Quando tiver o WhatsApp de algum deles, preencha o campo whatsapp (ex.: "5555999999999").
+      { nome: "Jessica Schirmer Espaço de Beleza", endereco: "Ijuí",                         whatsapp: "", perfil: "https://www.facebook.com/schirmerespacobelezaijui/", perfilNome: "Facebook", mapa: "https://www.google.com/maps/search/?api=1&query=Jessica+Schirmer+Espa%C3%A7o+de+Beleza+Iju%C3%AD" },
+      { nome: "Glória Beilfuss Beauty House",      endereco: "Centro",                       whatsapp: "", perfil: "https://www.facebook.com/gloriabeilfuss/",            perfilNome: "Facebook", mapa: "https://www.google.com/maps/search/?api=1&query=Gl%C3%B3ria+Beilfuss+Beauty+House+Iju%C3%AD" },
+      { nome: "Bellame Beauty Center",             endereco: "Rua das Chácaras, 765",        whatsapp: "5555996815586", perfil: "", perfilNome: "",                                   mapa: "https://www.google.com/maps/search/?api=1&query=Bellame+Beauty+Center+Iju%C3%AD" },
+      { nome: "Madamliê Beauty Center",            endereco: "Ijuí",                         whatsapp: "", perfil: "https://www.madamlie.com.br/",                       perfilNome: "Site",     mapa: "https://www.google.com/maps/search/?api=1&query=Madamli%C3%AA+Beauty+Center+Iju%C3%AD" },
+      { nome: "Ópera Cabelo",                      endereco: "Ijuí",                         whatsapp: "", perfil: "https://www.instagram.com/operacabelo/",             perfilNome: "Instagram", mapa: "https://www.google.com/maps/search/?api=1&query=%C3%93pera+Cabelo+Iju%C3%AD" },
     ],
   },
 

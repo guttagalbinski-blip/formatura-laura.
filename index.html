@@ -19,6 +19,8 @@
   <link rel="preload" as="font" type="font/woff2" href="noto-serif-latin-500-normal.woff2" crossorigin />
 
   <link rel="preload" as="image" href="lilas.webp" />
+  <link rel="preload" as="image" href="iris.webp" />
+  <link rel="preload" as="image" href="flor-cerejeira.webp" />
   <link rel="preload" as="image" href="selo.webp" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -45,12 +47,9 @@
 
     <!-- flores do convite entrando pelas laterais -->
     <div class="intro__flora" aria-hidden="true">
-      <img class="ifl ifl--leaf"   src="folha.webp" alt="" />
-      <img class="ifl ifl--lilac" src="lilas.webp" alt="" />
-      <img class="ifl ifl--calla-l" src="copo-de-leite.webp" alt="" />
-      <img class="ifl ifl--hyd-bl" src="hortensia.webp" alt="" />
-      <img class="ifl ifl--lily"   src="lirio.webp" alt="" />
-      <img class="ifl ifl--calla-r" src="copo-de-leite-2.webp" alt="" />
+      <div class="bq bq--tr ifl ifl--tr" aria-hidden="true"><img src="folha.webp" alt="" style="--x:38%;--y:-8%;--w:58%;--r:-140deg;--d:11s" /><img src="flor-cerejeira.webp" alt="" style="--x:-10%;--y:14%;--w:56%;--r:-38deg;--d:9s" /><img src="copo-de-leite.webp" alt="" style="--x:62%;--y:20%;--w:19%;--r:-30deg;--d:8s" /><img src="lilas.webp" alt="" style="--x:20%;--y:4%;--w:60%;--r:-14deg;--d:12s" /><img src="iris.webp" alt="" style="--x:2%;--y:44%;--w:42%;--r:18deg;--d:10s" /></div>
+      <div class="bq bq--smc ifl ifl--sm" aria-hidden="true"><img src="flor-cerejeira.webp" alt="" style="--x:-4%;--y:16%;--w:62%;--r:-20deg;--d:9s" /><img src="copo-de-leite.webp" alt="" style="--x:48%;--y:-8%;--w:22%;--r:-14deg;--d:8s" /><img src="lilas.webp" alt="" style="--x:8%;--y:40%;--w:58%;--r:8deg;--d:12s" /></div>
+      <div class="bq bq--bl ifl ifl--bl" aria-hidden="true"><img src="folha.webp" alt="" style="--x:-4%;--y:30%;--w:55%;--r:24deg;--d:11s" /><img src="copo-de-leite-2.webp" alt="" style="--x:54%;--y:-2%;--w:17%;--r:16deg;--d:8s" /><img src="ervilha.webp" alt="" style="--x:36%;--y:18%;--w:42%;--r:10deg;--d:8.5s" /><img src="lilas.webp" alt="" style="--x:12%;--y:28%;--w:52%;--r:6deg;--d:12s" /><img src="lirio.webp" alt="" style="--x:-4%;--y:48%;--w:46%;--r:-8deg;--d:10s" /></div>
     </div>
 
     <div class="intro__stage">
@@ -94,13 +93,9 @@
 
       <!-- flores (entram pelas laterais e flutuam) -->
       <div class="hero__flora" aria-hidden="true">
-        <img class="fl fl--leaf-tr"   src="folha.webp" alt="" />
-        <img class="fl fl--lilac"     src="lilas.webp" alt="" />
-        <img class="fl fl--calla-l"   src="copo-de-leite.webp" alt="" />
-        <img class="fl fl--leaf-bl"   src="folha.webp" alt="" />
-        <img class="fl fl--hyd-bl"    src="hortensia.webp" alt="" />
-        <img class="fl fl--lily"      src="lirio.webp" alt="" />
-        <img class="fl fl--calla-r"   src="copo-de-leite-2.webp" alt="" />
+        <div class="bq bq--tr fl fl--tr" aria-hidden="true"><img src="folha.webp" alt="" style="--x:38%;--y:-8%;--w:58%;--r:-140deg;--d:11s" /><img src="flor-cerejeira.webp" alt="" style="--x:-10%;--y:14%;--w:56%;--r:-38deg;--d:9s" /><img src="copo-de-leite.webp" alt="" style="--x:62%;--y:20%;--w:19%;--r:-30deg;--d:8s" /><img src="lilas.webp" alt="" style="--x:20%;--y:4%;--w:60%;--r:-14deg;--d:12s" /><img src="iris.webp" alt="" style="--x:2%;--y:44%;--w:42%;--r:18deg;--d:10s" /></div>
+        <div class="bq bq--sm fl fl--sm" aria-hidden="true"><img src="delfinio.webp" alt="" style="--x:34%;--y:-4%;--w:44%;--r:-16deg;--d:8s" /><img src="ervilha.webp" alt="" style="--x:-2%;--y:14%;--w:56%;--r:-6deg;--d:9.5s" /><img src="iris.webp" alt="" style="--x:22%;--y:46%;--w:58%;--r:10deg;--d:11s" /></div>
+        <div class="bq bq--bl fl fl--bl" aria-hidden="true"><img src="folha.webp" alt="" style="--x:-4%;--y:30%;--w:55%;--r:24deg;--d:11s" /><img src="copo-de-leite-2.webp" alt="" style="--x:54%;--y:-2%;--w:17%;--r:16deg;--d:8s" /><img src="ervilha.webp" alt="" style="--x:36%;--y:18%;--w:42%;--r:10deg;--d:8.5s" /><img src="lilas.webp" alt="" style="--x:12%;--y:28%;--w:52%;--r:6deg;--d:12s" /><img src="lirio.webp" alt="" style="--x:-4%;--y:48%;--w:46%;--r:-8deg;--d:10s" /></div>
       </div>
 
       <div class="hero__content">
@@ -120,12 +115,11 @@
     <section class="invite" id="convite">
       <div class="grain"></div>
       <img class="invite__leaf" src="folha.webp" alt="" aria-hidden="true" data-speed="-0.08" />
-      <img class="invite__calla" src="copo-de-leite.webp" alt="" aria-hidden="true" data-reveal="from-left" data-speed="0.06" />
-      <img class="invite__hyd invite__lilac" src="lilas.webp" alt="" aria-hidden="true" data-reveal="from-right" data-speed="-0.05" />
-      <img class="invite__lily" src="lirio.webp" alt="" aria-hidden="true" data-reveal="from-left" data-speed="0.04" />
 
       <article class="card" data-reveal="rise">
         <!-- moldura desenhada em tempo real (app.js) para manter as proporções em qualquer tela -->
+        <div class="bq bq--ctl cl-card-tl" aria-hidden="true" data-reveal="bloom"><img src="flor-cerejeira.webp" alt="" style="--x:-6%;--y:-4%;--w:72%;--r:-34deg;--d:9s" /><img src="copo-de-leite.webp" alt="" style="--x:56%;--y:-14%;--w:20%;--r:-36deg;--d:8s" /><img src="lilas.webp" alt="" style="--x:6%;--y:16%;--w:58%;--r:-12deg;--d:12s" /></div>
+        <div class="bq bq--cbr cl-card-br" aria-hidden="true" data-reveal="bloom"><img src="folha.webp" alt="" style="--x:34%;--y:24%;--w:60%;--r:130deg;--d:11s" /><img src="ervilha.webp" alt="" style="--x:0%;--y:6%;--w:50%;--r:-16deg;--d:8.5s" /><img src="delfinio.webp" alt="" style="--x:56%;--y:-6%;--w:34%;--r:18deg;--d:9s" /><img src="lirio.webp" alt="" style="--x:16%;--y:34%;--w:58%;--r:6deg;--d:10s" /></div>
         <svg class="card__frame" id="cardFrame" aria-hidden="true">
           <path class="frame-outer"/><path class="frame-inner"/>
         </svg>
@@ -201,8 +195,8 @@
           <div class="ph__mat"><div class="ph__inner"><img id="photoMain" alt="" loading="lazy" decoding="async" data-speed="0.06" /></div></div>
         </figure>
 
-        <img class="story__hyd story__lilac" src="lilas.webp" alt="" aria-hidden="true" data-reveal="from-right" data-speed="-0.12" />
-        <img class="story__calla" src="copo-de-leite-2.webp" alt="" aria-hidden="true" data-reveal="from-left" data-speed="-0.09" />
+        <div class="bq bq--smc cl-story" aria-hidden="true" data-reveal="from-left"><img src="flor-cerejeira.webp" alt="" style="--x:-4%;--y:16%;--w:62%;--r:-20deg;--d:9s" /><img src="copo-de-leite.webp" alt="" style="--x:48%;--y:-8%;--w:22%;--r:-14deg;--d:8s" /><img src="lilas.webp" alt="" style="--x:8%;--y:40%;--w:58%;--r:8deg;--d:12s" /></div>
+        <div class="bq bq--sm cl-story2" aria-hidden="true" data-reveal="from-left" data-speed="-0.06"><img src="delfinio.webp" alt="" style="--x:34%;--y:-4%;--w:44%;--r:-16deg;--d:8s" /><img src="ervilha.webp" alt="" style="--x:-2%;--y:14%;--w:56%;--r:-6deg;--d:9.5s" /><img src="iris.webp" alt="" style="--x:22%;--y:46%;--w:58%;--r:10deg;--d:11s" /></div>
 
         <figure class="ph ph--frame" data-reveal="mask-side">
           <div class="ph__mat"><div class="ph__inner"><img id="photoSecond" alt="" loading="lazy" decoding="async" /></div></div>
@@ -219,7 +213,7 @@
     <section class="gifts" id="presentes">
       <div class="gifts__panel">
         <div class="grain"></div>
-        <img class="gifts__calla" src="copo-de-leite.webp" alt="" aria-hidden="true" data-reveal="from-right" />
+        <div class="bq bq--sm cl-gift" aria-hidden="true" data-reveal="from-right"><img src="delfinio.webp" alt="" style="--x:34%;--y:-4%;--w:44%;--r:-16deg;--d:8s" /><img src="ervilha.webp" alt="" style="--x:-2%;--y:14%;--w:56%;--r:-6deg;--d:9.5s" /><img src="iris.webp" alt="" style="--x:22%;--y:46%;--w:58%;--r:10deg;--d:11s" /></div>
         <header class="gifts__head">
           <h2 class="script" data-reveal="ink">Quer presentear<br/>a nova médica?</h2>
           <p class="gifts__lead" data-reveal="fade">Escolha um presente para dar sozinho ou para dividir com os amigos e compartilhar esse carinho com a formanda. O Pix vai direto para a conta dela.</p>
@@ -230,12 +224,16 @@
 
     <!-- ===================== 5. DICAS: HOSPEDAGEM E BELEZA ===================== -->
     <section class="tips" id="dicas">
-      <img class="tips__lilac" src="lilas.webp" alt="" aria-hidden="true" data-reveal="from-right" />
+      <div class="bq bq--smc cl-tips" aria-hidden="true" data-reveal="from-right"><img src="flor-cerejeira.webp" alt="" style="--x:-4%;--y:16%;--w:62%;--r:-20deg;--d:9s" /><img src="copo-de-leite.webp" alt="" style="--x:48%;--y:-8%;--w:22%;--r:-14deg;--d:8s" /><img src="lilas.webp" alt="" style="--x:8%;--y:40%;--w:58%;--r:8deg;--d:12s" /></div>
       <header class="tips__head">
         <p class="caps tiny" data-reveal="fade">para quem vem a Ijuí</p>
         <h2 class="script" data-reveal="ink">dicas com carinho</h2>
         <p class="tips__lead" data-reveal="fade">Indicações de hospedagem e de salões de beleza para a noite da formatura. Toque para falar direto pelo WhatsApp.</p>
       </header>
+      <div class="tips__note tips__note--dress" data-reveal="fade">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4a2 2 0 1 1 2 2c-1 0-2 .6-2 1.6V8"/><path d="M12 8L3 15.5c-.6.5-.3 1.5.5 1.5h17c.8 0 1.1-1 .5-1.5z"/></svg>
+        <p><strong>Traje: social completo.</strong></p>
+      </div>
       <div class="tips__note" data-reveal="fade">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="1.5"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>
         <p><strong>Reserve com antecedência:</strong> no dia 11 de dezembro haverá outras festas na cidade, então hotéis e salões podem lotar. São apenas sugestões; fique à vontade para escolher outro lugar.</p>

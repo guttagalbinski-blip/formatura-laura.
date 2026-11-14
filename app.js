@@ -63,6 +63,22 @@
   setPhoto($("#photoSecond"), C.fotos.secundaria);
   $("#photoCaption").textContent = C.fotos.legenda;
 
+  /* ---------- sempre começar do início ----------
+     • não restaura a rolagem anterior
+     • se o navegador reabrir a página "congelada" (cache de voltar), recarrega
+     • se a pessoa voltar ao site depois de muito tempo, mostra o envelope de novo
+       (mas não ao voltar do app do banco depois de copiar o Pix)                 */
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  window.scrollTo(0, 0);
+  addEventListener("pageshow", (e) => { if (e.persisted) location.reload(); });
+  let hiddenAt = 0;
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) hiddenAt = Date.now();
+    else if (hiddenAt && Date.now() - hiddenAt > 30 * 60 * 1000) {
+      location.replace(location.pathname + location.search);
+    }
+  });
+
   /* ---------- abertura (envelope) ---------- */
   const intro = $("#intro");
   let opened = false;
@@ -80,7 +96,7 @@
       intro.classList.add("is-gone");
       document.body.classList.remove("is-locked");
       document.body.classList.add("is-ready");
-      if (goTo) { $(goTo).scrollIntoView(); history.replaceState(null, "", goTo); }
+      if (goTo) $(goTo).scrollIntoView();
       else window.scrollTo(0, 0);
     }, total);
     setTimeout(() => intro.remove(), total + 1200);
@@ -170,6 +186,7 @@
   /* ---------- dicas: hotéis e salões ---------- */
   const WA = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.6-4.2A8.5 8.5 0 1 1 20.5 11.6z"/><path d="M9 8.6c.3 2.9 2.6 5.3 5.6 5.8l1-1.2-1.6-.9-.8.7c-1-.4-1.9-1.3-2.4-2.4l.7-.8-.9-1.6-1.6.4z" stroke-width="1.1"/></svg>';
   const PIN = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.2A7 7 0 0 1 19 9.8C19 14.8 12 21 12 21z"/><circle cx="12" cy="10" r="2.5"/></svg>';
+  const LINK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>';
   function renderTips(items, msg) {
     return (items || []).map((t) => {
       const wa = (t.whatsapp || "").replace(/\D/g, "");
@@ -177,7 +194,8 @@
         <div class="tip__info"><strong>${esc(t.nome)}</strong>${t.endereco ? `<span>${esc(t.endereco)}</span>` : ""}</div>
         <div class="tip__actions">
           ${wa ? `<a class="btn btn--wine tip__wa" href="https://wa.me/${wa}?text=${encodeURIComponent(msg || "")}" target="_blank" rel="noopener">${WA}Entrar em contato</a>` : ""}
-          ${t.mapa ? `<a class="btn btn--ghost tip__map" href="${esc(t.mapa)}" target="_blank" rel="noopener" aria-label="Ver ${esc(t.nome)} no mapa">${PIN}${wa ? "Mapa" : "Ver no mapa"}</a>` : ""}
+          ${!wa && t.perfil ? `<a class="btn btn--wine tip__wa" href="${esc(t.perfil)}" target="_blank" rel="noopener">${LINK}Ver ${esc(t.perfilNome || "perfil")}</a>` : ""}
+          ${t.mapa ? `<a class="btn btn--ghost tip__map" href="${esc(t.mapa)}" target="_blank" rel="noopener" aria-label="Ver ${esc(t.nome)} no mapa">${PIN}${wa || t.perfil ? "Mapa" : "Ver no mapa"}</a>` : ""}
         </div>
       </li>`;
     }).join("");
@@ -375,6 +393,15 @@
   }
 
   /* ---------- dock (navegação) ---------- */
+  // rola até a seção sem colocar "#secao" no endereço (assim o link sempre abre no envelope)
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    const t = $(a.getAttribute("href"));
+    if (!t) return;
+    e.preventDefault();
+    t.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+  });
   const dock = $("#dock");
   const links = $$("a", dock);
   const sections = links.map((a) => $(a.getAttribute("href")));
