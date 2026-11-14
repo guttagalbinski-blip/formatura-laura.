@@ -815,3 +815,92 @@ button{ font:inherit; color:inherit; }
 .tips__note--dress{ align-items:center; margin-bottom:12px; }
 .tips__note--dress p{ font-size:.95rem; }
 .tips__note--dress + .tips__note{ margin-top:0; }
+
+/* fotos: flores só nos cantos da seção, nunca sobre as fotos */
+.cl-story{ left:auto; right:-8%; top:-20px; width:clamp(170px, 46vw, 340px); z-index:3; }
+.cl-story2{ left:-8%; top:auto; bottom:-30px; width:clamp(150px, 40vw, 300px); z-index:3; }
+.story{ padding-bottom:clamp(190px, 46vw, 300px); }
+@media (min-width: 980px){
+  .cl-story{ right:3%; left:auto; top:-30px; width:340px; }
+  .cl-story2{ left:3%; bottom:-40px; top:auto; width:300px; }
+  .story{ padding-bottom:220px; }
+}
+
+/* =========================================================
+   BUQUÊS MONTADOS (uma imagem por buquê, hastes unidas)
+   ========================================================= */
+.bw{ position:absolute; pointer-events:none; --rot:0deg; }
+.bw img{ display:block; width:100%; height:auto; transform:rotate(var(--rot)); transform-origin:50% 75%;
+  animation:bwSway 11s ease-in-out infinite; }
+@keyframes bwSway{ 0%,100%{ transform:rotate(var(--rot)); } 50%{ transform:rotate(calc(var(--rot) + 1.6deg)) translateY(-4px); } }
+
+/* abertura */
+.intro .bw{ opacity:0; z-index:2; animation:bwIn 2.2s var(--ease) forwards; }
+.bw-in-tr{ width:clamp(260px, min(84vw, 46vh), 640px); right:-24%; top:-10%; --rot:196deg; --fx:30%; --fy:-30%; animation-delay:.1s !important; }
+.bw-in-bl{ width:clamp(260px, min(84vw, 46vh), 640px); left:-26%; bottom:-11%; --rot:24deg; --fx:-30%; --fy:30%; animation-delay:.3s !important; }
+.bw-in-sm{ width:clamp(140px, min(40vw, 24vh), 320px); right:-10%; bottom:-3%; --rot:-22deg; --fx:30%; --fy:20%; animation-delay:.6s !important; }
+@keyframes bwIn{ from{ opacity:0; transform:translate(var(--fx,0),var(--fy,0)); } to{ opacity:1; transform:none; } }
+.intro.is-leaving .bw{ opacity:0; transition:opacity 1s; }
+
+/* topo (depois de abrir) */
+.bw-hero{ z-index:2; opacity:0; }
+.is-ready .bw-hero{ animation:bwIn 2.2s var(--ease) forwards; }
+.bw-he-tr{ width:clamp(280px, 88vw, 700px); right:-26%; top:-80px; --rot:196deg; --fx:30%; --fy:-30%; }
+.bw-he-bl{ width:clamp(280px, 88vw, 700px); left:-28%; bottom:-80px; --rot:24deg; --fx:-30%; --fy:30%; }
+.bw-he-sm{ width:clamp(140px, 42vw, 330px); right:-10%; bottom:-10px; --rot:-22deg; --fx:30%; --fy:20%; }
+.is-ready .bw-he-bl{ animation-delay:.25s; } .is-ready .bw-he-sm{ animation-delay:.5s; }
+
+/* cartão do convite */
+.bw-card-tl{ left:-70px; top:-80px; width:clamp(200px, 56vw, 340px); z-index:2; --rot:-28deg; }
+.bw-card-br{ right:-80px; bottom:-90px; width:clamp(220px, 62vw, 380px); z-index:2; --rot:152deg; }
+
+/* fotos: grande atrás da foto + um no canto de baixo */
+.ph{ z-index:1; }
+.bw-ph-back{ z-index:0; left:-22%; top:-14%; width:clamp(320px, 100vw, 720px); --rot:-22deg; }
+.bw-ph-front{ z-index:3; left:-14%; top:auto; grid-row:2; bottom:auto; width:clamp(240px, 70vw, 480px); --rot:18deg; margin-top:-8%; }
+.story__grid{ isolation:isolate; }
+
+/* presentes e dicas */
+.bw-gift{ right:-60px; top:-40px; width:clamp(210px, 58vw, 380px); z-index:0; --rot:200deg; }
+.bw-tips{ right:-60px; top:-40px; width:clamp(210px, 58vw, 380px); z-index:0; --rot:200deg; }
+
+@media (min-width: 900px) and (min-aspect-ratio: 1/1){
+  .bw-in-tr{ width:clamp(380px, 40vw, 720px); right:-8%; top:-14%; }
+  .bw-in-bl{ width:clamp(380px, 40vw, 720px); left:-8%; bottom:-16%; }
+  .bw-in-sm{ width:clamp(200px, 20vw, 360px); right:4%; bottom:-2%; }
+  .bw-he-tr{ width:clamp(400px, 42vw, 760px); right:-8%; top:-16%; }
+  .bw-he-bl{ width:clamp(400px, 42vw, 760px); left:-8%; bottom:-18%; }
+  .bw-he-sm{ width:clamp(200px, 20vw, 360px); right:4%; bottom:-2%; }
+  .bw-card-tl{ left:-170px; top:-110px; width:420px; }
+  .bw-card-br{ right:-180px; bottom:-130px; width:460px; }
+  .bw-ph-back{ left:-14%; top:-10%; width:640px; }
+  .bw-ph-front{ left:-10%; width:440px; grid-row:2; margin-top:-30%; }
+  .bw-gift, .bw-tips{ right:3%; width:380px; }
+}
+@media (prefers-reduced-motion: reduce){ .bw img{ animation:none; } }
+.bw-ph-back{ top:-60px; }
+.bw-ph-front{ grid-row:auto; margin-top:0; top:calc(100vw - 230px); }
+@media (min-width: 900px) and (min-aspect-ratio: 1/1){
+  .bw-ph-back{ top:-110px; left:-18%; }
+  .bw-ph-front{ top:480px; left:-12%; width:420px; }
+}
+@media (min-width: 640px) and (max-width: 979px){ .bw-ph-front{ top:calc(min(100vw, 980px) * .75 - 120px); } }
+.story{ padding-top:clamp(110px, 16vw, 150px); }
+.bw-ph-back{ left:-34%; top:-120px; width:clamp(340px, 112vw, 760px); --rot:-26deg; }
+.bw-ph-front{ left:-24%; top:calc(100vw - 150px); width:clamp(240px, 74vw, 480px); --rot:14deg; }
+@media (min-width: 900px) and (min-aspect-ratio: 1/1){
+  .bw-ph-back{ top:-150px; left:-22%; width:680px; }
+  .bw-ph-front{ top:560px; left:-14%; width:440px; }
+}
+.story{ padding-bottom:clamp(90px, 14vw, 140px); }
+@media (max-width: 899px), (max-aspect-ratio: 1/1){
+  .story__head{ margin-bottom:clamp(110px, 30vw, 170px); }
+  .bw-ph-back{ top:-100px; }
+  .bw-ph-front{ top:calc(100vw - 120px); left:-22%; }
+}
+@media (max-width: 899px), (max-aspect-ratio: 1/1){
+  .bw-he-tr{ top:-130px; }
+  .bw-gift, .bw-tips{ top:-70px; right:-50px; width:clamp(200px, 56vw, 340px); }
+  .gifts__panel{ padding-top:clamp(230px, 62vw, 300px); }
+  .tips{ padding-top:clamp(240px, 64vw, 310px); }
+}
