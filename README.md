@@ -1,90 +1,59 @@
-/* =====================================================================
-   ✿  CONFIGURAÇÃO DO SITE — EDITE AQUI  ✿
-   ===================================================================== */
+# Site de Formatura · Laura Berres Friedrich
 
-window.SITE_CONFIG = {
+Um site estático, sem banco de dados e sem build: é só publicar a pasta.
 
-  formanda: {
-    nome: "Laura Berres Friedrich",
-    monograma: "LBF",
-    curso: "Medicina",
-    ano: "2026",
-  },
+## Onde editar
 
-  evento: {
-    dataISO: "2026-12-11T20:00:00-03:00",
-    dataExtenso: "11 . dez . 26",
-    diaSemana: "sexta-feira",
-    horario: "20h",
-    local: "Villa Bento",
-    endereco: "Rua Bento Gonçalves, 304",
-    cidade: "Ijuí · RS",
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Villa+Bento+Rua+Bento+Gon%C3%A7alves+304+Iju%C3%AD+RS",
-    duracaoHoras: 6,
-  },
+Tudo fica em **`config.js`**: nome, data, local, textos do convite, RSVP, fotos, lista de presentes e Pix.
+Os campos marcados com `⚠ PROVISÓRIO` são o nome do recebedor e a cidade do Pix.
 
-  convite: {
-    chamada: "convida para a sua formatura",
-    texto: [
-      "Depois de anos de estudo, plantões e muita dedicação, chegou o momento de celebrar o início de um novo capítulo.",
-      "Será uma alegria imensa ter você ao meu lado nesta noite tão especial.",
-    ],
-    assinatura: "Com carinho, Laura",
-    rsvp: {
-      telefone: "(51) 99628-3444",
-      whatsapp: "5551996283444",
-      prazo: "até o dia 30.11",
-      mensagem: "Olá! Confirmo minha presença na formatura da Laura 🎓",
-    },
-  },
+| O que | Onde, dentro de `config.js` |
+|---|---|
+| Nome, curso e ano | `formanda` |
+| Data, horário, local, endereço e link do Maps | `evento` |
+| Texto do convite, RSVP e WhatsApp | `convite` |
+| Fotos e legenda | `fotos` (os arquivos ficam em `/img`) |
+| Chave Pix, recebedor e cidade | `pix` |
+| Presentes e valores | `presentes`: copie uma linha para adicionar e apague para remover |
 
-  fotos: {
-    principal:  { src: "laura-jaleco.jpg", alt: "Laura de jaleco, sorrindo",        foco: "50% 30%" },
-    secundaria: { src: "laura-beca.jpg",   alt: "Laura de beca segurando o canudo", foco: "50% 25%" },
-    legenda: "O jaleco, o juramento e um sonho que agora tem nome: doutora.",
-  },
+## Como trocar imagens
 
-  pix: {
-    chave: "04802641044",
-    recebedor: "NOME DO RECEBEDOR",
-    cidade: "IJUI",
-    banco: "",
-    copiaEColaAtivo: true,
-  },
+Substitua o arquivo em `/img` mantendo o mesmo nome:
 
-  presentes: [
-    { nome: "Café especial para os estudos", descricao: "Para manter a doutora acordada às 3h da manhã.", valor: 100, icone: "cafe" },
-    { nome: "Carimbo personalizado", descricao: "Para as muitas receitas e atestados.", valor: 100, icone: "carimbo" },
-    { nome: "Spa pós-provas", descricao: "Uma massagem relaxante.", valor: 150, icone: "flor" },
-    { nome: "Sushi para a formanda", descricao: "Um mimo que amo muito.", valor: 200, icone: "sushi" },
-    { nome: "Viagem com a Nathi", descricao: "Um sonho muito esperado.", valor: 250, icone: "aviao" },
-    { nome: "Caneta Swarovski", descricao: "Para assinar muitas receitas e atestados.", valor: 300, icone: "caneta" },
-    { nome: "Look de médica", descricao: "Uma camisa chique para atender.", valor: 350, icone: "camisa" },
-    { nome: "Jaleco novo com bordado", descricao: "Agora com “Dra.” antes do nome.", valor: 500, icone: "jaleco" },
-    { nome: "Congresso médico", descricao: "Me atualizar e aprender ainda mais sobre dermatologia.", valor: 1000, icone: "maleta" },
-    { nome: "Um abraço em forma de Pix", descricao: "Você escolhe o valor. Qualquer carinho é muito bem-vindo.", valor: 0, icone: "coracao", livre: true },
-    { nome: "Presentes físicos também são bem-vindos", descricao: "Se preferir, você pode entregar o seu presente no dia da festa.", valor: 0, icone: "presente", fisico: true },
-  ],
+- `laura-jaleco.jpg` e `laura-beca.jpg`: as fotos. O enquadramento é ajustado em `config.js → fotos → foco`.
+- `hortensia.webp`, `copo-de-leite.webp`, `copo-de-leite-2.webp`, `lirio.webp`, `folha.webp`, `flor-bordo.webp` e `selo.webp`: as ilustrações do Canva.
 
-  dicas: {
-    mensagemHotel: "Olá! Vou à formatura da Laura em Ijuí (11/12) e gostaria de informações sobre hospedagem.",
-    mensagemSalao: "Olá! Vou a uma formatura em Ijuí no dia 11/12 e gostaria de agendar um horário.",
-    hoteis: [
-      { nome: "Hotel Ijuí", endereco: "Rua David José Martins, 351 · Centro", whatsapp: "5555984150632", mapa: "https://www.google.com/maps/search/?api=1&query=Hotel+Iju%C3%AD+Rua+David+Jos%C3%A9+Martins+351+Iju%C3%AD" },
-      { nome: "Hotel Vera Cruz", endereco: "Rua 15 de Novembro, 234 · Centro", whatsapp: "5555991344812", mapa: "https://www.google.com/maps/search/?api=1&query=Hotel+Vera+Cruz+Iju%C3%AD" },
-      { nome: "Hotel Jardim Europa", endereco: "BR-285, km 457", whatsapp: "5555999320343", mapa: "https://www.google.com/maps/search/?api=1&query=Hotel+Jardim+Europa+Iju%C3%AD" },
-      { nome: "Hotel 44", endereco: "RS-342, km 119 · Distrito Industrial", whatsapp: "5555997010535", mapa: "https://www.google.com/maps/search/?api=1&query=Hotel+44+Iju%C3%AD" },
-    ],
-    saloes: [
-      { nome: "Jessica Schirmer Espaço de Beleza", endereco: "Ijuí", whatsapp: "", perfil: "https://www.facebook.com/schirmerespacobelezaijui/", perfilNome: "Facebook", mapa: "https://www.google.com/maps/search/?api=1&query=Jessica+Schirmer+Espa%C3%A7o+de+Beleza+Iju%C3%AD" },
-      { nome: "Glória Beilfuss Beauty House", endereco: "Centro", whatsapp: "", perfil: "https://www.facebook.com/gloriabeilfuss/", perfilNome: "Facebook", mapa: "https://www.google.com/maps/search/?api=1&query=Gl%C3%B3ria+Beilfuss+Beauty+House+Iju%C3%AD" },
-      { nome: "Bellame Beauty Center", endereco: "Rua das Chácaras, 765", whatsapp: "5555996815586", perfil: "", perfilNome: "", mapa: "https://www.google.com/maps/search/?api=1&query=Bellame+Beauty+Center+Iju%C3%AD" },
-      { nome: "Madamliê Beauty Center", endereco: "Ijuí", whatsapp: "", perfil: "https://www.madamlie.com.br/", perfilNome: "Site", mapa: "https://www.google.com/maps/search/?api=1&query=Madamli%C3%AA+Beauty+Center+Iju%C3%AD" },
-      { nome: "Ópera Cabelo", endereco: "Ijuí", whatsapp: "", perfil: "https://www.instagram.com/operacabelo/", perfilNome: "Instagram", mapa: "https://www.google.com/maps/search/?api=1&query=%C3%93pera+Cabelo+Iju%C3%AD" },
-    ],
-  },
+> **Recomendado:** as flores vieram do Canva em resolução baixa. Para ficarem mais nítidas, abra o design no Canva, selecione cada flor e use **Compartilhar → Baixar → PNG com fundo transparente**. Depois salve com o nome correspondente; pode ser `.png`, mas aí troque a extensão no `index.html`.
 
-  rodape: {
-    frase: "Obrigada por fazer parte desta história.",
-  },
-};
+## Publicar na Vercel (link público, sem login para os convidados)
+
+**Opção 1: GitHub (recomendado; cada alteração publica sozinha)**
+
+1. Crie um repositório no GitHub e envie todos os arquivos desta pasta. No site do GitHub dá para arrastar os arquivos em *Add file → Upload files*.
+2. Em vercel.com, clique em **Add New → Project → Import** e escolha o repositório.
+3. Em *Framework Preset*, escolha **Other**. Não precisa de build. Depois clique em **Deploy**.
+
+**Opção 2: Vercel CLI**
+
+```bash
+npm i -g vercel
+cd pasta-do-site
+vercel --prod
+```
+
+Em *Settings → Domains* você pode trocar o endereço, por exemplo `laura-formatura.vercel.app`.
+
+## Como funciona o Pix
+
+- A chave só aparece na janela que abre ao tocar em **Presentear**.
+- **Copiar chave Pix** usa a API de área de transferência do navegador. Se ela falhar, o site usa um método alternativo; se também falhar, ele seleciona a chave para o convidado copiar manualmente.
+- **Pix Copia e Cola** (alternativa): o código é gerado no próprio navegador, no padrão do Banco Central, já com o valor do presente. Para desligar, use `copiaEColaAtivo: false`.
+- Nenhum presente é marcado como pago, porque o site não recebe confirmação do banco.
+
+Antes de divulgar, faça um teste: copie o código de um presente e cole no app do seu banco. Confira se o nome e o valor aparecem certos, mas não conclua o pagamento.
+
+## Detalhes
+
+- Um link direto para uma seção pula a abertura do envelope, por exemplo `…/#presentes`.
+- O site respeita a configuração "reduzir movimento" do celular.
+- Fontes do convite no Canva: Imperial Script (caligrafia) e Noto Serif (textos), licença SIL Open Font License, hospedadas na pasta `/fonts`.

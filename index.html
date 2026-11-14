@@ -18,8 +18,9 @@
   <link rel="preload" as="font" type="font/woff2" href="imperial-script-latin-400-normal.woff2" crossorigin />
   <link rel="preload" as="font" type="font/woff2" href="noto-serif-latin-500-normal.woff2" crossorigin />
   <link rel="preload" as="image" href="selo.webp" />
-  <link rel="preload" as="image" href="buque-a.webp" />
-  <link rel="preload" as="image" href="buque-b.webp" />
+  <link rel="preload" as="image" href="lirio.webp" />
+  <link rel="preload" as="image" href="folha.webp" />
+  <link rel="preload" as="image" href="lilas.webp" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="is-locked">
@@ -45,9 +46,16 @@
 
     <!-- flores do convite entrando pelas laterais -->
     <div class="intro__flora" aria-hidden="true">
-      <div class="bw bw-in-tr" aria-hidden="true"><img src="buque-a.webp" alt="" /></div>
-      <div class="bw bw-in-sm" aria-hidden="true"><img src="buque-c.webp" alt="" /></div>
-      <div class="bw bw-in-bl" aria-hidden="true"><img src="buque-b.webp" alt="" /></div>
+      <img class="ifl v1-leaf-tr" src="folha.webp" alt="" />
+      <img class="ifl v1-cl-tr" src="lilas.webp" alt="" />
+      <img class="ifl v1-calla-l" src="copo-de-leite.webp" alt="" />
+      <img class="ifl v1-calla-l2" src="delfinio.webp" alt="" />
+      <img class="ifl v1-cl-l" src="iris.webp" alt="" />
+      <img class="ifl v1-leaf-bl" src="folha.webp" alt="" />
+      <img class="ifl v1-cl-bl" src="lilas.webp" alt="" />
+      <img class="ifl v1-lily" src="lirio.webp" alt="" />
+      <img class="ifl v1-calla-r" src="copo-de-leite-2.webp" alt="" />
+      <img class="ifl v1-calla-r2" src="flor-cerejeira.webp" alt="" />
     </div>
 
     <div class="intro__stage">
@@ -91,9 +99,16 @@
 
       <!-- flores (entram pelas laterais e flutuam) -->
       <div class="hero__flora" aria-hidden="true">
-        <div class="bw bw-hero bw-he-tr" aria-hidden="true"><img src="buque-a.webp" alt="" /></div>
-        <div class="bw bw-hero bw-he-sm" aria-hidden="true"><img src="buque-c.webp" alt="" /></div>
-        <div class="bw bw-hero bw-he-bl" aria-hidden="true"><img src="buque-b.webp" alt="" /></div>
+        <img class="fl v1-leaf-tr" src="folha.webp" alt="" />
+        <img class="fl v1-cl-tr" src="lilas.webp" alt="" />
+        <img class="fl v1-calla-l" src="copo-de-leite.webp" alt="" />
+        <img class="fl v1-calla-l2" src="delfinio.webp" alt="" />
+        <img class="fl v1-cl-l" src="iris.webp" alt="" />
+        <img class="fl v1-leaf-bl" src="folha.webp" alt="" />
+        <img class="fl v1-cl-bl" src="lilas.webp" alt="" />
+        <img class="fl v1-lily" src="lirio.webp" alt="" />
+        <img class="fl v1-calla-r" src="copo-de-leite-2.webp" alt="" />
+        <img class="fl v1-calla-r2" src="flor-cerejeira.webp" alt="" />
       </div>
 
       <div class="hero__content">
@@ -113,11 +128,15 @@
     <section class="invite" id="convite">
       <div class="grain"></div>
       <img class="invite__leaf" src="folha.webp" alt="" aria-hidden="true" data-speed="-0.08" />
+      <img class="v1-inv-calla" src="copo-de-leite.webp" alt="" aria-hidden="true" data-reveal="from-left" />
+      <img class="v1-inv-calla2" src="delfinio.webp" alt="" aria-hidden="true" data-reveal="from-left" />
+      <img class="v1-inv-cl" src="lilas.webp" alt="" aria-hidden="true" data-reveal="from-right" />
+      <img class="v1-inv-cl2" src="ervilha.webp" alt="" aria-hidden="true" data-reveal="from-right" />
+      <img class="v1-inv-lily" src="lirio.webp" alt="" aria-hidden="true" data-reveal="from-left" />
+      <img class="v1-inv-lily2" src="iris.webp" alt="" aria-hidden="true" data-reveal="from-left" />
 
       <article class="card" data-reveal="rise">
         <!-- moldura desenhada em tempo real (app.js) para manter as proporções em qualquer tela -->
-        <div class="bw bw-card-tl" aria-hidden="true" data-reveal="bloom"><img src="buque-c.webp" alt="" /></div>
-        <div class="bw bw-card-br" aria-hidden="true" data-reveal="bloom"><img src="buque-b.webp" alt="" /></div>
         <svg class="card__frame" id="cardFrame" aria-hidden="true">
           <path class="frame-outer"/><path class="frame-inner"/>
         </svg>
@@ -189,13 +208,15 @@
       </header>
 
       <div class="story__grid">
-        <div class="bw bw-ph-back" aria-hidden="true" data-reveal="from-left"><img src="buque-a.webp" alt="" /></div>
+        <img class="v1-st-cl" src="lilas.webp" alt="" aria-hidden="true" data-reveal="from-right" />
+        <img class="v1-st-cl2" src="ervilha.webp" alt="" aria-hidden="true" data-reveal="from-right" />
+        <img class="v1-st-calla" src="copo-de-leite-2.webp" alt="" aria-hidden="true" data-reveal="from-left" />
+        <img class="v1-st-calla2" src="delfinio.webp" alt="" aria-hidden="true" data-reveal="from-left" />
         <figure class="ph ph--arch" data-reveal="mask">
           <div class="ph__mat"><div class="ph__inner"><img id="photoMain" alt="" decoding="async" data-speed="0.06" /></div></div>
         </figure>
 
 
-        <div class="bw bw-ph-front" aria-hidden="true" data-reveal="from-left"><img src="buque-b.webp" alt="" /></div>
         <figure class="ph ph--frame" data-reveal="mask-side">
           <div class="ph__mat"><div class="ph__inner"><img id="photoSecond" alt="" decoding="async" /></div></div>
         </figure>
@@ -211,7 +232,8 @@
     <section class="gifts" id="presentes">
       <div class="gifts__panel">
         <div class="grain"></div>
-        <div class="bw bw-gift" aria-hidden="true" data-reveal="from-right"><img src="buque-c.webp" alt="" /></div>
+        <img class="v1-gf-calla" src="copo-de-leite.webp" alt="" aria-hidden="true" data-reveal="from-right" />
+        <img class="v1-gf-calla2" src="iris.webp" alt="" aria-hidden="true" data-reveal="from-right" />
         <header class="gifts__head">
           <h2 class="script" data-reveal="ink">Quer presentear<br/>a nova médica?</h2>
           <p class="gifts__lead" data-reveal="fade">Escolha um presente para dar sozinho ou para dividir com os amigos e compartilhar esse carinho com a formanda. O Pix vai direto para a conta dela.</p>
@@ -222,7 +244,8 @@
 
     <!-- ===================== 5. DICAS: HOSPEDAGEM E BELEZA ===================== -->
     <section class="tips" id="dicas">
-      <div class="bw bw-tips" aria-hidden="true" data-reveal="from-right"><img src="buque-c.webp" alt="" /></div>
+      <img class="v1-tp-cl" src="lilas.webp" alt="" aria-hidden="true" data-reveal="from-right" />
+      <img class="v1-tp-cl2" src="flor-cerejeira.webp" alt="" aria-hidden="true" data-reveal="from-right" />
       <header class="tips__head">
         <p class="caps tiny" data-reveal="fade">para quem vem a Ijuí</p>
         <h2 class="script" data-reveal="ink">dicas com carinho</h2>

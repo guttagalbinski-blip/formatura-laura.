@@ -904,3 +904,218 @@ button{ font:inherit; color:inherit; }
   .gifts__panel{ padding-top:clamp(230px, 62vw, 300px); }
   .tips{ padding-top:clamp(240px, 64vw, 310px); }
 }
+
+/* =========================================================
+   GRUPOS DELICADOS (duplas, trios e buquezinhos — nunca uma flor sozinha)
+   ========================================================= */
+.intro .bw{ opacity:0; z-index:2; animation:bwIn 2.2s var(--ease) forwards; }
+.g-in-tr{ width:clamp(180px, min(56vw, 32vh), 420px); right:-9%; top:-5%; --rot:205deg; --fx:30%; --fy:-30%; animation-delay:.1s !important; }
+.g-in-tl{ width:clamp(100px, min(30vw, 18vh), 220px); left:-6%; top:-3%; --rot:150deg; --fx:-40%; --fy:-30%; animation-delay:.5s !important; }
+.g-in-bl{ width:clamp(130px, min(40vw, 25vh), 300px); left:-6%; bottom:-4%; --rot:18deg; --fx:-40%; --fy:30%; animation-delay:.3s !important; }
+.g-in-br{ width:clamp(130px, min(40vw, 22vh), 300px); right:-8%; bottom:-2%; --rot:-24deg; --fx:40%; --fy:20%; animation-delay:.7s !important; }
+
+.g-hero{ z-index:2; opacity:0; }
+.is-ready .g-hero{ animation:bwIn 2.2s var(--ease) forwards; }
+.g-he-tr{ width:clamp(170px, 50vw, 420px); right:-8%; top:-30px; --rot:200deg; --fx:30%; --fy:-30%; }
+.g-he-tl{ width:clamp(100px, 30vw, 230px); left:-5%; top:-24px; --rot:155deg; --fx:-40%; --fy:-30%; }
+.g-he-bl{ width:clamp(190px, 56vw, 460px); left:-8%; bottom:-20px; --rot:16deg; --fx:-40%; --fy:30%; }
+.g-he-br{ width:clamp(110px, 32vw, 250px); right:-4%; bottom:-10px; --rot:-18deg; --fx:40%; --fy:20%; }
+.is-ready .g-he-tl{ animation-delay:.4s; } .is-ready .g-he-bl{ animation-delay:.2s; } .is-ready .g-he-br{ animation-delay:.6s; }
+.hero{ padding-top:clamp(190px, 46vw, 300px); padding-bottom:clamp(200px, 48vw, 320px); }
+
+.g-card-tl{ left:-40px; top:-50px; width:clamp(150px, 42vw, 260px); z-index:2; --rot:-30deg; }
+.g-card-br{ right:-44px; bottom:-56px; width:clamp(160px, 46vw, 290px); z-index:2; --rot:160deg; }
+.g-inv-r{ right:-12%; top:46%; width:clamp(150px, 42vw, 320px); z-index:0; --rot:-40deg; }
+
+.g-ph-back{ z-index:0; left:-18%; top:-90px; width:clamp(230px, 70vw, 480px); --rot:-26deg; }
+.g-ph-front{ z-index:3; left:-10%; top:calc(100vw - 120px); width:clamp(140px, 40vw, 280px); --rot:18deg; }
+.g-gift{ right:-20px; top:-40px; width:clamp(130px, 36vw, 240px); z-index:0; --rot:200deg; }
+.g-tips{ right:-30px; top:-30px; width:clamp(160px, 44vw, 300px); z-index:0; --rot:200deg; }
+.gifts__panel{ padding-top:clamp(180px, 48vw, 230px); }
+.tips{ padding-top:clamp(180px, 46vw, 240px); }
+
+@media (min-width: 900px) and (min-aspect-ratio: 1/1){
+  .g-in-tr{ width:clamp(300px, 30vw, 520px); right:-3%; top:-8%; }
+  .g-in-tl{ width:clamp(160px, 15vw, 260px); left:6%; top:-4%; }
+  .g-in-bl{ width:clamp(240px, 24vw, 420px); left:-2%; bottom:-6%; }
+  .g-in-br{ width:clamp(220px, 20vw, 360px); right:3%; bottom:-3%; }
+  .g-he-tr{ width:clamp(300px, 28vw, 520px); right:-2%; top:-6%; }
+  .g-he-tl{ width:clamp(160px, 15vw, 260px); left:6%; top:-4%; }
+  .g-he-bl{ width:clamp(300px, 28vw, 520px); left:-2%; bottom:-6%; }
+  .g-he-br{ width:clamp(200px, 18vw, 320px); right:4%; bottom:-2%; }
+  .hero{ padding-top:120px; padding-bottom:140px; }
+  .g-card-tl{ left:-130px; top:-80px; width:300px; }
+  .g-card-br{ right:-140px; bottom:-90px; width:320px; }
+  .g-inv-r{ right:calc(50% - 560px); top:30%; width:340px; z-index:2; }
+  .g-ph-back{ left:-12%; top:-120px; width:520px; }
+  .g-ph-front{ top:560px; left:-8%; width:300px; }
+  .g-gift, .g-tips{ right:3%; width:300px; }
+}
+
+/* =========================================================
+   COMPOSIÇÕES FLORAIS (como nos exemplos do Canva):
+   flores em pé, nascendo das bordas e cantos, 2–3 por grupo
+   ========================================================= */
+.fc{ pointer-events:none; }
+.fc > img{ transform-origin:50% 100%; filter:drop-shadow(0 8px 12px rgba(20,25,15,.22)); }
+.intro .fc{ opacity:0; z-index:2; animation:bwIn 2.2s var(--ease) forwards; }
+.fc-in-tr{ width:clamp(170px, min(48vw, 28vh), 400px); right:-16%; top:-12%; --fx:30%; --fy:-30%; animation-delay:.1s !important; }
+.fc-in-bl{ width:clamp(180px, min(54vw, 32vh), 440px); left:-8%; bottom:-5%; --fx:-30%; --fy:30%; animation-delay:.3s !important; }
+.fc-in-br{ width:clamp(150px, min(44vw, 26vh), 360px); right:-6%; bottom:-5%; --fx:30%; --fy:30%; animation-delay:.6s !important; }
+
+.fc-he{ z-index:2; opacity:0; }
+.is-ready .fc-he{ animation:bwIn 2.2s var(--ease) forwards; }
+.fc-he-tr{ width:clamp(180px, 50vw, 440px); right:-16%; top:-70px; --fx:30%; --fy:-30%; }
+.fc-he-bl{ width:clamp(200px, 58vw, 480px); left:-8%; bottom:-5%; --fx:-30%; --fy:30%; }
+.fc-he-br{ width:clamp(180px, 50vw, 430px); right:-8%; bottom:-5%; --fx:30%; --fy:30%; }
+.is-ready .fc-he-bl{ animation-delay:.2s; } .is-ready .fc-he-br{ animation-delay:.45s; }
+.hero{ padding-top:clamp(160px, 40vw, 260px); padding-bottom:clamp(220px, 56vw, 340px); }
+
+.fc-card-l { left:-64px;  top:46%;     width:clamp(140px, 36vw, 250px); z-index:2; }
+.fc-card-bl{ left:-56px;  bottom:-60px; width:clamp(170px, 46vw, 300px); z-index:2; }
+.fc-card-r { right:-58px; bottom:16%;  width:clamp(140px, 38vw, 260px); z-index:2; }
+
+.fc-ph-arch{ z-index:3; left:-10%; top:calc(100vw - 230px); width:clamp(190px, 56vw, 360px); }
+.fc-ph-beca{ z-index:3; right:-8%; bottom:-50px; width:clamp(140px, 38vw, 260px); }
+
+.fc-gift-tl{ left:-24px; top:6px;  width:clamp(140px, 38vw, 250px); z-index:0; }
+.fc-gift-br{ right:-24px; bottom:-10px; width:clamp(170px, 46vw, 340px); z-index:0; }
+.gifts__panel{ padding-top:clamp(170px, 44vw, 230px); padding-bottom:clamp(170px, 46vw, 300px); }
+.fc-tips-tr{ right:-24px; top:0; width:clamp(150px, 40vw, 280px); z-index:0; }
+.fc-tips-bl{ left:-24px; bottom:-10px; width:clamp(170px, 46vw, 320px); z-index:0; }
+.tips{ padding-top:clamp(180px, 46vw, 240px); padding-bottom:clamp(180px, 48vw, 300px); }
+
+@media (min-width: 900px) and (min-aspect-ratio: 1/1){
+  .fc-in-tr{ width:clamp(280px, 26vw, 460px); right:-6%; top:-14%; }
+  .fc-in-bl{ width:clamp(300px, 28vw, 500px); left:-2%; bottom:-6%; }
+  .fc-in-br{ width:clamp(260px, 24vw, 420px); right:1%; bottom:-6%; }
+  .fc-he-tr{ width:clamp(300px, 28vw, 500px); right:-6%; top:-12%; }
+  .fc-he-bl{ width:clamp(320px, 30vw, 540px); left:-2%; bottom:-6%; }
+  .fc-he-br{ width:clamp(300px, 28vw, 500px); right:1%; bottom:-6%; }
+  .hero{ padding-top:120px; padding-bottom:160px; }
+  .fc-card-l { left:-170px; top:40%; width:290px; }
+  .fc-card-bl{ left:-160px; bottom:-90px; width:340px; }
+  .fc-card-r { right:-170px; bottom:14%; width:300px; }
+  .fc-ph-arch{ left:-12%; top:360px; width:360px; }
+  .fc-ph-beca{ right:2%; bottom:-60px; width:280px; }
+  .fc-gift-tl{ left:2%; top:10px; width:280px; }
+  .fc-gift-br{ right:2%; width:340px; }
+  .gifts__panel{ padding-top:200px; padding-bottom:240px; }
+  .fc-tips-tr{ right:3%; width:300px; }
+  .fc-tips-bl{ left:3%; width:320px; }
+  .tips{ padding-top:200px; padding-bottom:240px; }
+}
+/* ajustes: grupos mais cheios no celular; flores das fotos presas aos cantos das fotos */
+.fc-in-bl{ width:clamp(200px, min(62vw, 36vh), 460px); }
+.fc-in-br{ width:clamp(180px, min(54vw, 32vh), 400px); }
+.fc-he-bl{ width:clamp(220px, 64vw, 500px); }
+.fc-he-br{ width:clamp(200px, 58vw, 460px); }
+.fc-gift-br, .fc-tips-bl{ width:clamp(190px, 54vw, 360px); }
+.fc-gift-tl, .fc-tips-tr{ width:clamp(160px, 44vw, 290px); }
+.ph .fc{ z-index:4; }
+.fc-ph-arch{ left:-26%; right:auto; top:auto; bottom:-14%; width:62%; }
+.fc-ph-beca{ right:-26%; left:auto; top:auto; bottom:-16%; width:58%; }
+@media (min-width: 900px) and (min-aspect-ratio: 1/1){
+  .fc-ph-arch{ left:-24%; bottom:-10%; width:62%; top:auto; }
+  .fc-ph-beca{ right:-22%; bottom:-12%; width:52%; }
+}
+.fc-ph-beca{ bottom:-8%; }
+.story__quote{ margin-top:110px; }
+@media (min-width: 980px){ .story__quote{ margin-top:150px; } }
+
+/* =========================================================
+   FLORES — mesma disposição da versão 1
+   (hortênsias trocadas pelas flores novas; cada flor com uma companheira)
+   ========================================================= */
+.hero{ padding:90px var(--gutter) 120px; }
+.invite{ padding:clamp(80px, 14vw, 140px) var(--gutter) clamp(80px, 12vw, 120px); }
+.card{ padding:clamp(70px, 17vw, 96px) clamp(30px, 9vw, 64px); }
+.story{ padding:clamp(90px, 14vw, 150px) var(--gutter); }
+.story__head{ margin-bottom:clamp(36px, 7vw, 60px); }
+.story__quote{ margin-top:44px; }
+.gifts__panel{ padding:clamp(64px, 12vw, 110px) clamp(16px, 4.5vw, 60px) clamp(54px, 10vw, 90px); }
+.tips{ padding:clamp(80px, 13vw, 130px) var(--gutter) clamp(80px, 12vw, 120px); }
+.intro__kicker{ display:block !important; }
+
+/* abertura e topo (mesmas posições) */
+.v1-leaf-tr  { width:clamp(150px, 42vw, 330px); right:-12%; top:-6%;   --r:-145deg; --from:translate(40%,-30%); }
+.v1-cl-tr    { width:clamp(120px, 34vw, 270px); right:-9%;  top:12%;   --r:-24deg;  --from:translate(60%,0); }
+.v1-calla-l  { width:clamp(64px, 18vw, 130px);  left:-1%;   top:12%;   --r:-22deg;  --from:translate(-80%,10%); }
+.v1-calla-l2 { width:clamp(60px, 16vw, 120px);  left:9%;    top:9%;    --r:6deg;    --from:translate(-80%,10%); }
+.v1-cl-l     { width:clamp(110px, 30vw, 230px); left:-14%;  bottom:18%; --r:22deg;  --from:translate(-70%,0); }
+.v1-leaf-bl  { width:clamp(120px, 32vw, 250px); left:-10%;  bottom:-10%; --r:20deg; --from:translate(-50%,30%); }
+.v1-cl-bl    { width:clamp(110px, 30vw, 240px); left:6%;    bottom:-6%; --r:14deg;  --from:translate(-40%,50%); }
+.v1-lily     { width:clamp(110px, 30vw, 230px); left:-8%;   bottom:-4%; --r:-8deg;  --from:translate(-60%,40%); }
+.v1-calla-r  { width:clamp(64px, 18vw, 130px);  right:3%;   bottom:-2%; --r:-18deg; --from:translate(70%,30%); }
+.v1-calla-r2 { width:clamp(90px, 26vw, 200px);  right:-8%;  bottom:-3%; --r:10deg;  --from:translate(70%,30%); }
+
+.ifl.v1-leaf-tr  { animation-delay:.05s, 2.4s; }
+.ifl.v1-cl-tr    { animation-delay:.25s, 2.6s; animation-duration:2.4s, 11s; }
+.ifl.v1-calla-l  { animation-delay:.5s,  2.9s; animation-duration:2.4s, 8s; }
+.ifl.v1-calla-l2 { animation-delay:.6s,  3s;   animation-duration:2.4s, 9s; }
+.ifl.v1-cl-l     { animation-delay:.35s, 2.7s; animation-duration:2.4s, 10s; }
+.ifl.v1-leaf-bl  { animation-delay:.15s, 2.5s; }
+.ifl.v1-cl-bl    { animation-delay:.45s, 2.8s; animation-duration:2.4s, 12s; }
+.ifl.v1-lily     { animation-delay:.6s,  3s;   animation-duration:2.4s, 9.5s; }
+.ifl.v1-calla-r  { animation-delay:.7s,  3.1s; animation-duration:2.4s, 7.5s; }
+.ifl.v1-calla-r2 { animation-delay:.8s,  3.2s; animation-duration:2.4s, 8.5s; }
+.is-ready .fl.v1-leaf-tr  { animation-delay:.05s, 2.2s; }
+.is-ready .fl.v1-cl-tr    { animation-delay:.25s, 2.4s; animation-duration:2.2s, 11s; }
+.is-ready .fl.v1-calla-l  { animation-delay:.5s,  2.7s; animation-duration:2.2s, 8s; }
+.is-ready .fl.v1-calla-l2 { animation-delay:.6s,  2.8s; animation-duration:2.2s, 9s; }
+.is-ready .fl.v1-cl-l     { animation-delay:.35s, 2.5s; animation-duration:2.2s, 10s; }
+.is-ready .fl.v1-leaf-bl  { animation-delay:.15s, 2.3s; }
+.is-ready .fl.v1-cl-bl    { animation-delay:.45s, 2.6s; animation-duration:2.2s, 12s; }
+.is-ready .fl.v1-lily     { animation-delay:.6s,  2.8s; animation-duration:2.2s, 9.5s; }
+.is-ready .fl.v1-calla-r  { animation-delay:.7s,  2.9s; animation-duration:2.2s, 7.5s; }
+.is-ready .fl.v1-calla-r2 { animation-delay:.8s,  3s;   animation-duration:2.2s, 8.5s; }
+
+/* convite */
+[class^="v1-inv"], [class^="v1-st"], [class^="v1-gf"], [class^="v1-tp"]{ position:absolute; height:auto; pointer-events:none; animation:floaty 10s ease-in-out infinite; }
+.v1-inv-calla  { z-index:2; width:clamp(70px, 20vw, 140px); left:-2%;  top:16%;  rotate:-20deg; }
+.v1-inv-calla2 { z-index:2; width:clamp(56px, 15vw, 110px); left:9%;   top:13%;  rotate:6deg; }
+.v1-inv-cl     { z-index:0; width:clamp(120px, 34vw, 260px); right:-12%; top:30%; rotate:-30deg; }
+.v1-inv-cl2    { z-index:0; width:clamp(80px, 22vw, 170px); right:-6%; top:24%; rotate:-14deg; }
+.v1-inv-lily   { z-index:0; width:clamp(120px, 32vw, 240px); left:-12%; bottom:20%; }
+.v1-inv-lily2  { z-index:0; width:clamp(90px, 24vw, 180px); left:-8%; bottom:28%; rotate:-16deg; }
+
+/* fotos */
+.v1-st-cl     { z-index:3; width:clamp(110px, 30vw, 230px); right:-6%; top:-6%; rotate:-28deg; }
+.v1-st-cl2    { z-index:3; width:clamp(70px, 18vw, 140px); right:14%; top:-9%; rotate:-8deg; }
+.v1-st-calla  { z-index:3; width:clamp(56px, 15vw, 110px); left:2%; top:58%; rotate:14deg; }
+.v1-st-calla2 { z-index:3; width:clamp(56px, 15vw, 110px); left:-6%; top:62%; rotate:-6deg; }
+
+/* presentes e dicas */
+.v1-gf-calla  { z-index:0; width:clamp(80px, 22vw, 150px); right:-10px; top:46px; rotate:-10deg; }
+.v1-gf-calla2 { z-index:0; width:clamp(90px, 24vw, 170px); right:-34px; top:96px; rotate:12deg; }
+.v1-tp-cl     { z-index:0; width:clamp(130px, 34vw, 280px); right:-10%; top:-30px; rotate:-18deg; }
+.v1-tp-cl2    { z-index:0; width:clamp(90px, 24vw, 190px); right:12%; top:-26px; rotate:6deg; }
+
+@media (min-width: 980px){
+  .hero{ padding:90px var(--gutter) 120px; }
+  .v1-calla-l{ left:6%; } .v1-calla-l2{ left:13%; }
+  .v1-lily{ left:2%; }
+  .v1-calla-r{ right:10%; } .v1-calla-r2{ right:4%; }
+  .v1-inv-cl{ right:calc(50% - 420px); top:24%; z-index:2; }
+  .v1-inv-cl2{ right:calc(50% - 380px); top:20%; z-index:2; }
+  .v1-inv-lily{ left:calc(50% - 430px); bottom:22%; z-index:2; }
+  .v1-inv-lily2{ left:calc(50% - 400px); bottom:30%; z-index:2; }
+  .v1-inv-calla{ left:calc(50% - 395px); top:110px; }
+  .v1-inv-calla2{ left:calc(50% - 350px); top:96px; }
+  .v1-st-calla{ left:47%; top:auto; bottom:-4%; }
+  .v1-st-calla2{ left:43%; top:auto; bottom:-2%; }
+  .story__quote{ margin-top:40px; }
+  .gifts__panel{ padding:clamp(64px, 12vw, 110px) clamp(16px, 4.5vw, 60px) clamp(54px, 10vw, 90px); }
+  .tips{ padding:clamp(80px, 13vw, 130px) var(--gutter) clamp(80px, 12vw, 120px); }
+  .v1-tp-cl{ right:4%; } .v1-tp-cl2{ right:20%; }
+}
+@media (prefers-reduced-motion: reduce){ .fl, .ifl{ opacity:1; transform:rotate(var(--r)); } }
+/* celular: manter os textos livres */
+@media (max-width: 979px){
+  .intro__kicker{ display:none !important; }
+  .v1-calla-l{ top:1%; } .v1-calla-l2{ top:-1%; }
+  .v1-inv-calla{ top:clamp(30px, 8vw, 60px); left:-4%; }
+  .v1-inv-calla2{ top:clamp(22px, 6vw, 50px); left:6%; }
+  .v1-st-cl{ top:-1%; right:-12%; width:clamp(100px, 26vw, 200px); }
+  .v1-st-cl2{ top:-3%; right:8%; width:clamp(60px, 15vw, 120px); }
+}

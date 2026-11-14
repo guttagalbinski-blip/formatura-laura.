@@ -78,20 +78,19 @@ window.SITE_CONFIG = {
      valor: número em reais, sem "R$" (use ponto para centavos: 89.90)
      icone: "estetoscopio" | "cafe" | "livro" | "aviao" | "jaleco" | "flor" | "taca" | "coracao"
             | "relogio" | "maleta" | "plantao" | "estrela" | "carimbo" | "sushi" | "caneta" | "camisa" | "presente"
-     aPartirDe: true → mostra "a partir de R$ X" e o convidado escolhe o valor
      livre: true     → valor livre
      fisico: true    → card sem botão de Pix (presente entregue pessoalmente)              */
   presentes: [
     { nome: "Café especial para os estudos",  descricao: "Para manter a doutora acordada às 3h da manhã.",          valor: 100,  icone: "cafe" },
-    { nome: "Carimbo personalizado",          descricao: "Para as muitas receitas e atestados.",                     valor: 100,  icone: "carimbo" },
-    { nome: "Spa pós-provas",                 descricao: "Uma massagem relaxante.",                                  valor: 150,  icone: "flor" },
-    { nome: "Sushi para a formanda",          descricao: "Um mimo que amo muito.",                                valor: 200,  icone: "sushi" },
-    { nome: "Caneta Swarovski",               descricao: "Para assinar muitas receitas e atestados.",                valor: 300,  icone: "caneta" },
-    { nome: "Look de médica",                 descricao: "Uma camisa chique para atender.",                          valor: 350,  icone: "camisa" },
+    { nome: "Carimbo personalizado",          descricao: "Para as muitas receitas e atestados.",                     valor: 150,  icone: "carimbo" },
+    { nome: "Spa pós-provas",                 descricao: "Uma massagem relaxante.",                                  valor: 250,  icone: "flor" },
+    { nome: "Sushi para a formanda",          descricao: "Um mimo que amo muito.",                                valor: 300,  icone: "sushi" },
+    { nome: "Viagem com a Nathi",             descricao: "Um sonho muito esperado.",                                 valor: 400,  icone: "aviao" },
+    { nome: "Caneta Swarovski",               descricao: "Para assinar muitas receitas e atestados.",                valor: 450,  icone: "caneta" },
+    { nome: "Look de médica",                 descricao: "Uma camisa chique para atender.",                          valor: 500,  icone: "camisa" },
     { nome: "Jaleco novo com bordado",        descricao: "Agora com “Dra.” antes do nome.",                          valor: 500,  icone: "jaleco" },
-    { nome: "Congresso médico",               descricao: "Me atualizar e aprender ainda mais sobre dermatologia.", valor: 1000, icone: "maleta" },
-    { nome: "Viagem com a Nathi",             descricao: "Um sonho muito esperado.",                                 valor: 100,  icone: "aviao", aPartirDe: true },
-    { nome: "Um abraço em forma de Pix",      descricao: "Qualquer carinho é muito bem-vindo.",                      valor: 100,  icone: "coracao", aPartirDe: true },
+    { nome: "Congresso médico",               descricao: "Me atualizar e aprender ainda mais sobre dermatologia.", valor: 1200, icone: "maleta" },
+    { nome: "Um abraço em forma de Pix",      descricao: "Você escolhe o valor. Qualquer carinho é muito bem-vindo.",                      valor: 0,    icone: "coracao", livre: true },
     { nome: "Presentes físicos também são bem-vindos", descricao: "Se preferir, você pode entregar o seu presente no dia da festa.", valor: 0, icone: "presente", fisico: true },
   ],
 
